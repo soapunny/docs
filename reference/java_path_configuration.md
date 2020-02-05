@@ -8,5 +8,5 @@ CLASSPATH                    %classpath%;.
 JAVA_HOME                      jre 경로
 </code></pre>
 
-Path - 편집 %JAVA_HOME%\bin 추가<br>
-java -version 을 입력하여 잘 나오는지 확인
+Path - 편집 <b>%JAVA_HOME%\bin</b> 추가<br>
+<b>java -version</b> 을 입력하여 잘 나오는지 확인

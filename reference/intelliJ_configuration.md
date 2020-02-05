@@ -1,3 +1,5 @@
+<h1>IntelliJ configuration</h1><hr/>
+
 <h4>1. 자바 jdk 설치</h4>
 File - Project structure로 JDK 등록
 <br>
