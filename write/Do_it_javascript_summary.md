@@ -446,5 +446,164 @@ Source      브라우저가 자바스크립트 소스를 파싱(parsing, 저장�
 
 <b>수학 객체</b>
 <ul>
-<li></li>
+<li>수학 객체(Math Object)는 최댓값, 최솟값, 반올림값 등의 수학 계산 관련 메소드 제공</li>
 </ul>
+<pre><code>    Math.abs(숫자)                       숫자의 절대값을 반환한다.
+    Math.max(숫자1, 숫자2, 숫자3, ...)    숫자 중 가장 큰 값을 반환한다.
+    Math.min(숫자1, 숫자2, 숫자3, ...)    숫자 중 가장 작은 값을 반환한다.
+    Math.pow(숫자, 제곱값)                숫자의 거듭제곱값을 반환한다.
+    Math.random()                        0이상 1미만의 임의의 실수를 반환한다.
+    Math.round(숫자)                     소수점 첫째 자리에서 반올림하여 정수를 반환한다.
+    Math.ceil(숫자)                      소수점 첫째 자리에서 무조건 올림하여 정수를 반환한다.
+    Math.floor(숫자)                     소수점 첫째 자리에서 무조건 내림하여 정수를 반환한다.
+    Math.sqrt(숫자)                      숫자의 제곱근값을 반환한다.
+    Math.PI                              원주율 상수를 반환한다.
+</code></pre>
+<br>
+
+<b>배열 객체</b>
+<ul>
+<li>여러 개의 데이터를 하나의 저장소에 연속적으로 저장하기 위한 방법이다.</li>
+<li>인덱스는 0부터 시작</li>
+<li>var 참조변수 = new Array();</li>
+<li>참조변수[0] = 값1, 참조변수[1] = 값2, ...</li>
+<li>var 참조변수 = new Array(값1, 값2, 값3, ...);</li>
+<li>var 참조변수 = [값1, 값2, 값3, ...];</li>
+</ul>
+<pre><code>    var testArray1 = new Array();
+    testArray1[0] = 1;
+    testArray1[1] = "참";
+    testArray1[2] = true;<br>
+    var testArray2 = new Array(1, "참", true);<br>
+    var testArray3 = [1, "참", true];
+</code></pre>
+<br>
+
+<pre><code>    join(연결문자)              배열 객체의 데이터들을 연결 문자(default : ',')로 연결, string으로 반환
+    reverse()                   배열 객체의 데이터 순서를 거꾸로 바꾼 후 반환
+    sort()                      배열 객체의 데이터를 오름차순으로 정렬
+    slice(startIdx, endIdx)     배열 객체 중 일부를(startIdx부터 endIdx 이전) 잘라서 반환
+    splice(idx, 0 or 1, data)   배열의 해당 idx에 data를 삽입(0) 또는 수정(1)한다.
+    concat()                    2개의 배열 객체를 하나로 결합
+    pop()                       배열 객체의 마지막 인덱스에 해당하는 데이터를 삭제
+    push(new data)              배열 객체의 마지막 인덱스에 새 데이터를 삽입
+    shift()                     배열 객체의 저장된 데이터 중 첫 번째 인덱스에 저장된 데이터를 삭제 및 반환
+    unshift(new data)           배열 객체의 가장 앞 인덱스에 new data를 삽입
+    length                      배열의 길이를 반환
+</code></pre>
+<br>
+
+<b>문자열 객체</b>
+<ul>
+<li>문자형 객체 선언하는법
+<ol>
+<li>var 참조변수 = new String("문자형 데이터");</li>
+<li>var 참조변수 = "문자형데이터";</li>
+</ol>
+</li>
+</ul>
+<pre><code>    charAt(index)                문자열에서 인덱스 번호에 해당하는 문자 반환
+    indexOf("찾을 문자")          문자열의 왼쪽부터 찾아 가장 먼저 찾은 일치하는 문자열을 반환, 찾는 문자가 없으면 -1 반환
+    lastIndexOf("찾을 문자")      문자열의 오른쪽부터 찾아 가장 먼저 찾은 일치하는 문자열의 인덱스를 반환, 찾는 문자가 없으면 -1 반환
+    match("찾을 문자")            문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 가장 먼저 일치하는 문자를 반환, 찾는 문자가 없으면 null 반환
+    replace("바꿀 문자", "새문자") 문자열에서 왼쪽부터 바꿀 문자를 찾아 일치하는 문자가 있으면 새 문자로 치환하여 반환
+    search("찾을 문자")           문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 인덱스 번호를 반환
+    slice(a, b)                  문자열에서 a미만, b이상을 자른 나머지를 반환
+    substring(a, b)              문자열 a 인덱스 이상, b 인덱스 미만 이전 구간의 문자를 반환한다.
+    substr(a, 문자개수)           문자열 a 인덱스부터 지정한 문자 개수만큼 문자열을 반환한다.
+    split("문자")                 해당 구분자를 기준으로 잘라서 배열로 저장 및 반환
+    toLowerCase()                문자열에서 대문자를 모두 소문자로 치환하여 반환
+    toUpperCase()                문자열에서 소문자를 모두 대문자로 치환하여 반환
+    length                       문자열의 길이를 반환
+    concat("새로운 문자")         문자열에 새로운 문자를 결합
+    charCodeAt(index)            해당 index의 아스키 코드값을 반환
+    fromCharCode(아스키 코드 값)  아스키 코드 값에 해당하는 문자를 반환
+    trim()                       문자열 앞 뒤 공백 제거
+</code></pre>
+<br>
+
+<h4> 4-3. 브라우저 객체모델(BOM)</h4>
+<br>
+
+<b>브라우저 객체</b>
+<ul>
+<li>브라우저에 내장된 객체를 '브라우저 객체'라고 한다.</li>
+<li>브라우저 객체 모델(BOM, Browser Object Model)은 계층형 구조로 이루어져 있다.</li>
+</ul>
+<pre><code>                        window<br>
+document    screen     location     history     navigator
+</code></pre>
+<br>
+
+<b>window 객체</b>
+<ul>
+<li>window 객체는 브라우저 객체의 최상위 객체이다.</li>
+</ul>
+<pre><code>    open("URL", "새 창 이름", "새 창 옵션")      URL 페이지를 새 창으로 보여준다.
+                                                새 창의 옵션에는 width, height, left, top, scrollbars, location,
+                                                status, toolbars 등이 있다.
+    alert(data)                                 경고 창을 나타내고 데이터를 보여준다.
+    prompt("질문", "기본답변")                   질의응답 창을 보여준다.
+    confirm("질문 내용")                         해당 질문에 확인을 누르면 true, 취소를 누르면 false를 반환한다.
+    moveTo(x, y)                                지정한 새 창의 위치를 이동한다.
+    resizeTo(width, height)                     지장한 새 창의 크기를 변경한다.
+    setInterval(function(){코드}, 시간간격(ms))  일정 시간 간격으로 해당 코드를 실행한다.
+    setTimeout(function(){코드}, 시간간격(ms))   일정 시간 후에 해당 코드를 한번만 실행한다.
+</code></pre>
+<br>
+
+<b>screen 객체</b>
+<ul>
+<li>screen 객체는 사용자의 모니터 정보를 제공하는 객체이다.</li>
+<li>사용 예 : screen.속성</li>
+</ul>
+<pre><code>    screen.width         화면의 너비를 반환
+    screen.height        화면의 높이를 반환
+    screen.availWidth    작업 표시줄을 제외한 화면의 너비 반환
+    screen.availHeight   작업 표시줄을 제외한 화면의 높이 반환
+    screen.colorDepth    사용자 모니터가 표현 가능한 컬러 bit를 반환
+</code></pre>
+<br>
+
+<b>location 객체</b>
+<ul>
+<li>location 객체는 사용자 브라우저와 관련된 속성과 메소드를 제공한다.</li>
+<li>현재 URL에 대한 정보와 새로고침(reload) 메소드를 제공</li>
+</ul>
+<pre><code>    location.href           URL로 이동
+    location.hash           URL의 해시값(#에 명시된 값)을 반환
+    location.hostname       URL의 호스트 이름을 설정 혹은 반환
+    location.host           URL의 호스트 이름과 포트 번호 반환
+    location.protocol       URL의 프로토콜을 반환
+    location.search         URL의 쿼리(?이하 값)을 반환
+    location.reload()       브라우저를 새로 고침한다.
+</code></pre>
+<br>
+
+<b>history 객체</b>
+<ul>
+<li>history 객체는 사용자가 방문한 사이트의 기록을 남긴다.</li>
+<li>이전, 다음 방문 사이트로 돌아갈 수 있는 속성과 메소드 제공</li>
+</ul>
+<pre><code>    history.back()           이전 방문 사이트로 이동
+    history.forward()        다음 방문 사이트로 이동
+    history.go(이동 숫자)     이동 숫자에 -3를 입력하면 3단계 이전의 방문 사이트로 이동
+    history.length           방문 기록에 저장된 목록의 개수를 반환
+</code></pre>
+<br>
+
+<b>navigator 객체</b>
+<ul>
+<li>navigator 객체는 현재 방문자가 사용하는 브라우저 정보와 운영체제 정보를 제공한다.</li>
+</ul>
+<pre><code>    navigator.appCodeName                현재 브라우저의 코드명(Mozilla)을 반환
+    navigator.appName                    현재 브라우저의 이름(Netscape)을 반환
+    navigator.appVersion                 현재 브라우저의 버전 정보를 반환(5.0(Windows))
+    navigator.language                   현재 브라우저가 사용하는 언어를 반환
+    navigator.product                    현재 브라우저의 엔진 이름을 반환
+    navigator.platform                   현재 컴퓨터의 운영체제 정보를 제공(ex, Win32)
+    navigator.onLine                     온라인 상태 여부 반환
+    navigator.userAgent                  브라우저와 운영체제의 종합 정보를 제공
+</code></pre>
+<br>
+
