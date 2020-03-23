@@ -285,7 +285,7 @@ gradleVersion = '4.4'
 <br>
 <ul>
 <li>@bean로 설정하면 getBean(빈 메서드명, 반환클래스명.class)를 통해 객체를 반환한다.</li>
-<li>@bean는 단일 객체만 생성하며(singleton), 새로운 객체를 생성하고자 하는 경우 @bean을 하나 더 만든다.</li>
+<li>@bean는 기본설정으로 단일 객체만 생성하며(singleton), 새로운 객체를 생성하고자 하는 경우 @bean을 하나 더 만든다.</li>
 </ul>
 <br>
 
@@ -293,3 +293,105 @@ gradleVersion = '4.4'
 <hr>
 <br>
 
+<h4>3.1. 의존이란</h4>
+<ul>
+<li>DI는 'Dependency Injection'의 약자로 우리말로 '의존 주입'이라고 한다.</li>
+<li>여기에서 '의존'은 객체간의 의존을 의미한다.</li>
+<li>아래와 같이 한 클래스의 메서드로 다른 클래스의 메서드(기능)를 실행할 때 이를 '의존'한다고 한다.</li>
+</ul>
+
+<pre><code>public class MemberRegisterService {
+    //
+    private MemberDAO memberDAO = new MemberDAO();
+    
+    public void regist(RegisterRequest req) {
+        //이메일로 member 객체를 가져온다.
+        Member member = memberDAO.selectByEmail(req.getEmail());
+        
+        if(member != null) {//해당 이메일을 가진 멤버가 존재하면 예외 발생
+            throw new DuplicationMemberException("dup email "+req.getEmail());
+        }
+        //새 멤버 등록
+        Member newMember = new Member(req.getEmail(), req.getPassword(), req.getName(), LocalDateTime.now());
+        memberDAO.insert(newMember);
+    }
+}
+</code></pre>
+<br>
+
+<h4>3.2. DI를 통한 의존 처리</h4>
+<br>
+<ul>
+<li>다음은 의존 객체를 직접 생성하는것이 아닌 생성자를 통해서 전달받는 DI 패턴이다.</li>
+<li>이렇게 '의존 주입'을 하게되면 리팩토링 시 변경할 코드가 적어진다. 유지보수가 쉬워진다.</li>
+</ul>
+
+<pre><code>public class MemberRegisterService {
+    //
+    private MemberDAO memberDAO;
+    
+    public MemberRegisterService(MemberDAO memberDAO) {//생성자를 통해 객체를 주입
+        this.memberDAO = memberDAO;
+    }
+    
+    public Long regist(RegisterRequest req) {
+        Member member = memberDAO.selectByEmail(req.getEmail());
+        
+        if(member != null) {
+            throw new DuplicatedMemberException("Duplicated email -> "+req.getEmail());
+        }
+        
+        Member newMember = new Member(req.getEmail(), req.getPassword(), req.getName(), LocalDateTime.now());
+        memberDAO.insert(newMember);
+        return newMember.getId();
+    }
+}
+</code></pre>
+<br>
+
+<h4>3.3. 예제 프로젝트 만들기</h4>
+<br>
+<ul>
+<li>Maven project를 위한 pom.xml 작성</li>
+<li>회원관련 클래스인 Member, WrongIdPasswordException, MemberDAO</li>
+<li>회원 가입 처리 관련 클래스인 DuplicateMemberException, RegisterRequest, MemberRegisterService</li>
+<li>암호 변경 관련 클래스인 MemberNotFoundException, ChangePasswordService</li>
+<li>조립기인 Assembler 클래스로 각각의 객체들을 조립, MainForAssembler 클래스로 프로그램을 실행한다.</li>
+</ul>
+<br>
+
+<h4>3.4. 스프링을 이용한 객체 조립과 사용</h4>
+<br>
+<ul>
+<li>Assembler 대신 스프링을 사용한 코드를 작성한다.</li>
+<li>AppContext 클래스를 @Configuration으로 등록하여 @Bean들을 생성해준다.</li>
+<li>MainForSpring에서 AnnotationConfigApplicationContext 생성자를 통해 위의 AppContext를 등록한다.</li>
+<li>각각의 빈클래스들을 getBean() 메서드로 불러온다.</li>
+</ul>
+<br>
+
+<h4>3.5. DI 방식 1 : 생성자 방식</h4>
+<br>
+<ul>
+<li>PrintEntireMemberService 클래스를 활용하여 전체 맴버를 출력한다.</li>
+<li>AppContext에 해당 빈 객체를 생성자를 사용하여 등록하고, MainForSpring에 전체 맴버를 출력하는 메서드 생성</li>
+</ul>
+<br>
+
+<h4>3.6. DI 방식 2 : 세터(setter) 방식</h4>
+<br>
+<ul>
+<li>PrintSingleMemberService 클래스를 활용하여 해당 맴버를 출력한다.</li>
+<li>AppContext에 해당 빈 객체를 생성한 후 세터를 반드시 설정한 후 반환한다.</li>
+<li>setter를 통한 DI 주입을 해주지 않으면 해당 객체 사용시 NullPointerException 발생!!</li>
+<li>MainForSpring에 맴버를 찾는 메서드를 등록해준다.</li>
+<li></li>
+</ul>
+<br>
+
+<h4>기본 데이터 타입 값 설정</h4>
+<br>
+<ul>
+<li></li>
+</ul>
+<br>
