@@ -364,8 +364,8 @@ gradleVersion = '4.4'
 <br>
 <ul>
 <li>Assembler 대신 스프링을 사용한 코드를 작성한다.</li>
-<li>AppContext 클래스를 @Configuration으로 등록하여 @Bean들을 생성해준다.</li>
-<li>MainForSpring에서 AnnotationConfigApplicationContext 생성자를 통해 위의 AppContext를 등록한다.</li>
+<li>ApplicationConfiguration 클래스를 @Configuration으로 등록하여 @Bean들을 생성해준다.</li>
+<li>MainForSpring에서 AnnotationConfigApplicationContext 생성자를 통해 위의 ApplicationConfiguration를 등록한다.</li>
 <li>각각의 빈클래스들을 getBean() 메서드로 불러온다.</li>
 </ul>
 <br>
@@ -374,24 +374,235 @@ gradleVersion = '4.4'
 <br>
 <ul>
 <li>PrintEntireMemberService 클래스를 활용하여 전체 맴버를 출력한다.</li>
-<li>AppContext에 해당 빈 객체를 생성자를 사용하여 등록하고, MainForSpring에 전체 맴버를 출력하는 메서드 생성</li>
+<li>ApplicationConfiguration에 해당 빈 객체를 생성자를 사용하여 등록하고, MainForSpring에 전체 맴버를 출력하는 메서드 생성</li>
 </ul>
+
+<pre><code>@Bean
+public PrintEntireMemberService printEntireMemberService() {//Constructor DI method
+    return new PrintEntireMemberService(memberDAO());
+}
+</code></pre>
 <br>
 
 <h4>3.6. DI 방식 2 : 세터(setter) 방식</h4>
 <br>
 <ul>
 <li>PrintSingleMemberService 클래스를 활용하여 해당 맴버를 출력한다.</li>
-<li>AppContext에 해당 빈 객체를 생성한 후 세터를 반드시 설정한 후 반환한다.</li>
+<li>ApplicationConfiguration에 해당 빈 객체를 생성한 후 세터를 반드시 설정한 후 반환한다.</li>
 <li>setter를 통한 DI 주입을 해주지 않으면 해당 객체 사용시 NullPointerException 발생!!</li>
 <li>MainForSpring에 맴버를 찾는 메서드를 등록해준다.</li>
-<li></li>
+</ul>
+
+<pre><code>@Bean
+public PrintSingleMemberService printSingleMemberService() {//Setter DI method
+    PrintSingleMemberService printSingleMemberService = new PrintSingleMemberService();
+    printSingleMemberService.setMemberDAO(memberDAO());
+    
+    return printSingleMemberService;
+}
+</code></pre>
+<br>
+
+<h4>3.7. 기본 데이터 타입 값 설정</h4>
+<br>
+<ul>
+<li>생성자 방식이나 세터 방식으로 @Bean 생성 시 기본 데이터 타입을 직접 넣어주는 방법</li>
+</ul>
+
+<pre><code>@Bean
+public VersionPrinter versionPrinter() {
+    VersionPrinter versionPrinter = new VersionPrinter();
+    versionPrinter.setMajorVersion(5);// 직접 기본 데이터 타입 부여
+    versionPrinter.setMinorVersion(0);
+    return versionPrinter;
+}
+</code></pre>
+<br>
+
+<h4>3.8. @Configuration 설정 클래스</h4>
+<br>
+<ul>
+<li>@Bean은 기본값으로 하나의 객체만을 생성하는 싱글톤 방식을 취한다.</li>
+<li>@Configuration 설정 파일의 @Bean의 개수가 늘어나면 설정파일을 분할해준다.</li>
+<li>AnnotationConfigApplicationContext의 생성자는 가변 인자를 취하기 때문에 추가한 설정 파일 클래스를 매개 변수에 추가해주면 된다.</li>
+<li>@Autowired 필드는 스프링의 자동 주입 기능을 위한 것이다. 해당 타입의 빈을 찾아 필드 값에 부여한다.</li>
+</ul>
+
+<pre><code>//ApplicationConfiguration2 클래스
+public class ApplicationConfiguration2 {
+    //
+    @Autowired
+    private MemberDAO memberDAO;
+    @Autowired
+    private MemberPrinter memberPrinter;
+    ...이하생략...
+}
+
+//MainForSpring의 생성자
+public MainForSpring() {
+    applicationContext = new AnnotationConfigApplicationContext(ApplicationConfiguration1.class, ApplicationConfiguration2.class);
+}
+</code></pre>
+<br>
+
+<h4>3.9. 설정파일이 아닌 일반 의존 주입 클래스에서의 @Autowired</h4>
+<br>
+<ul>
+<li>세터를 활용하는 일반 의존 주입 클래스의 필드에 @Autowired를 해주면</li>
+<li>@Configuration 설정 파일에서 세터 의존 주입을 해주지 않아도 자동으로 찾아 주입해준다.</li>
+</ul>
+
+<pre><code>public class PrintSingleMemberService {
+    //@Autowired 시 @Configuration 클래스에서 따로 세터 의존 주입을 해줄 필요 x
+    @Autowired
+    private MemberDAO memberDAO;
+    ...중간 생략...
+    public void setMemberDAO(MemberDAO memberDAO){
+     this.memberDAO = memberDAO;
+    }
+}
+
+public class ApplicationConfiguration2{
+    ...생략...
+    @Bean
+    public PrintSingleMemberService printSingleMemberService() {//Setter DI method
+        PrintSingleMemberService printSingleMemberService = new PrintSingleMemberService();
+        /*printSingleMemberService.setMemberDAO(memberDAO); 해당 코드 생략 가능*/
+        
+        return printSingleMemberService;
+    }
+}
+</code></pre>
+<br>
+
+<h4>3.10. @Import 어노테이션 사용</h4>
+<br>
+<ul>
+<li>ApplicationConfiguration1 클래스에 @Import(ApplicationConfiguration2.class)를 등록해주면</li>
+<li>AnnotationConfigApplicationContext 클래스를 생성할 때 ApplicationConfiguration1만 매개변수로 넣어주면 된다.</li>
+<li>@Configuration 클래스인 ApplicationConfigurationImport 클래스를 새로 만든다.</li>
+<li>해당 클래스에 2개 이상 클래스를 @Import({ApplicationConfiguration1.class, ApplicationConfiguration2.class})와 같이 임포트해준다.</li>
+</ul>
+
+<pre><code>@Configuration
+@Import({ApplicationConfiguration1.class, ApplicationConfiguration2.class})
+public class ApplicationConfigurationImport {
+    //
+}
+
+public class MainForSpring{
+    // ApplicationConfigurationImport 클래스만 등록해주면 끝
+    public MainForSprint(){
+        applicationContext = AnnotationConfigApplicationContext(ApplicationConfigurationImport.class);
+    }
+    ...이하 생략...
+}
+</code></pre>
+<br>
+
+<h4>3.11. getBean() 메서드 사용</h4>
+<br>
+<ul>
+<li>VersionPrinter versionPrinter = applicationContext.getBean("versionPrinter", VersionPrinter.class);</li>
+<li>위에 getBean의 인자인 versionPrinter는 등록된 빈 메서드의 이름이고 VersionPrinter.class는 반환하는 객체 타입이다.</li>
+<li>만일 빈 메서드명을 versionPrinter2라고 주면 NoSuchBeanDefinitionException 발생</li>
+<li>만일 빈 메서드명을 이미 존재하는 memberDAO로 바꾸면, 반환타입이 VersionPrinter.class가 아니라 BeanNotOfRequiredTypeException이 발생한다.</li>
+<li>만일 해당 클래스의 빈 객체가 하나만 존재하면 getBean(VersionPrinter.class)라고 사용할 수 있다.</li>
+<li>단, 해당 클래스 타입의 빈 객체가 2개 이상 존재하면 위의 메서드는 NoUniqueBeanDefinitionException을 발생</li>
 </ul>
 <br>
 
-<h4>기본 데이터 타입 값 설정</h4>
+<h4>3.12. 주입 대상 객체를 모두 빈 객체로 설정해야 하나?</h4>
+<br>
+<ul>
+<li>빈 객체가 아닌 private MemberDAO memberDAO = new MemberDAO() 다음과 같이 필드로 선언해주면</li>
+<li>해당 @Configuration 파일에서는 사용가능하나 스프링 컨테이너가 관리x, 스프링 컨테이너에서 사용 불가능 하다.</li>
+<li>그렇기에 스프링 의존 주입 대상은 스프링 빈으로 등록하는 것이 바람직하다.</li>
+</ul>
+<br>
+
+<h1>chapter 04. 의존 자동 주입</h1>
+<hr/>
+<br>
+
+<h4>4.1. @Autowired를 사용한 의존 자동 주입</h4>
+<br>
+<ul>
+<li>프로젝트 chap04 폴더를 만든 후 pom.xml추가 및 src/main/java 폴더 추가</li>
+<li>chap03에서 작성한 모든 자바 파일을 복사해온다.</li>
+<li>ChangePasswordService 클래스에서 필드값에 @Autowired를 하면 @Configuration 파일에서 세터 의존 주입을 생략 가능하다.</li>
+<li>또한 필드 값에 @Autowired를 하면 세터 메서드가 없어도 의존 자동 주입된다.</li>
+<li>필드값이 아닌 세터 메서드에 @Autowired 해줘도 동일하게 의존 자동 주입한다.</li>
+<li>이제 @Configuration 파일의 빈 메서드들은 객체 반환만 해주면 된다.</li>
+</ul>
+<br>
+
+<h4>4.2. 일치하는 빈이 없는 경우</h4>
+<br>
+<ul>
+<li>만약 @Autowired를 적용한 대상에 해당하는 빈 객체가 없으면 UnsatisfiedDependencyException이 발생한다.</li>
+<li>@Autowired를 적용한 대상에 해당하는 빈 객체가 2개 이상일 경우도 UnsatisfiedDependencyException 발생</li>
+</ul>
+
+<pre><code>//@Autowired된 필드
+@Autowired
+private MemberDAO memberDAO;
+
+//@Configuration 파일(해당 타입의 빈 객체가 없을 경우)
+//@Bean
+//public MemberDAO memberDAO() {//해당 메서드가 반환한 객체를 스프링 빈으로 설정
+//    return new MemberDAO();
+//}
+
+//@Configuration 파일(해당 타입의 빈 객체가 2개 이상일 경우)
+@Bean
+public MemberDAO memberDAO1(){
+    return new MemberDAO();
+}
+@Bean
+public MemberDAO memberDAO2(){
+    return new MemberDAO();
+}
+</code></pre>
+<br>
+
+<h4>4.3. @Qualifier 어노테이션을 이용한 의존 객체 선택</h4>
+<br>
+<ul>
+<li>자동 주입 가능한 빈이 두 개 이상이면 자동 주입할 빈을 선택할 수 있는 방법이 필요</li>
+<li>@Qualifier 어노테이션이 이 역할을 해준다.</li>
+<li>@Bean 아래에 @Qualifier("별명")으로 등록하면 @Autowired 선언부 아래에 @Qualifier("별명")으로 매칭 가능하다.</li>
+</ul>
+<br>
+
+<h4>4.4. 빈 이름을 기본 한정자로 지정한 의존 객체 선택</h4>
+<br>
+<ul>
+<li>자동 주입 가능한 빈이 두 개 이상일 때, 하나의 빈의 이름으로 필드명을 생성한다.</li>
+</ul>
+
+<pre><code>//@Configuration 클래스
+@Bean
+public MemberDAO memberDAO() {//기본 한정자
+    return new MemberDAO();
+}
+
+@Bean
+@Qualifier("memberDAOClone")
+public MemberDAO memberDAO2() {//"memberDAOClone"이 한정자가 됨
+    return new MemberDAO();
+}
+
+//@필드 선언부
+@Autowired
+private MemberDAO memberDAO; //memberDAO()의 빈 객체를 주입한다.
+@Autowired
+private MemberDAO memberDAOClone; //memberDAO2()의 빈 객체를 주입한다.
+</code></pre>
+<br>
+
+<h4>4.5. 상위/하위 타입 관계와 자동 주입</h4>
 <br>
 <ul>
 <li></li>
 </ul>
-<br>
