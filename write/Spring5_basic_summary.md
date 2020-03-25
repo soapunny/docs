@@ -604,5 +604,289 @@ private MemberDAO memberDAOClone; //memberDAO2()의 빈 객체를 주입한다.
 <h4>4.5. 상위/하위 타입 관계와 자동 주입</h4>
 <br>
 <ul>
-<li></li>
+<li>해당 빈 객체와 해당 빈 객체를 상속 받은 빈 객체를 반환하는 빈 메서드도 한정자를 구분해 주지 않으면 예외 발생</li>
+<li>다음 예외를 해결하기 위한 방법으로 @Qualifier 어노테이션으로 한정자를 구분해 주는 방법이 있다.</li>
+<li>다른 방법으로는 @Autowired 한 부분에서 상속받은 빈 객체를 사용하도록 바꾸는 방법이 있다.</li>
 </ul>
+
+<pre><code>public class ApplicationConfiguration1(){
+    @Bean
+    public MemberPrinter memberPrinter1(){
+        return new MemberPrinter();
+    }
+    @Bean
+    public MemberSummaryPrinter memberPrinter2(){//MemberPrinter를 상속받은 MemberSummaryPrinter
+        return new MemberSummaryPrinter();
+    }
+}
+
+public class MemberListPrinter(){
+    ...생략...
+    // MemberPrinter로 받게되면 memberPrinter1 빈 메소드와 memberPrinter2 빈 메소드 중복 주입이 가능
+    @Autowired
+    public void setMemberPrinter(MemberSummaryPrinter printer){//MemberSummaryPrinter로 방지
+        this.printer = printer;
+    }
+}
+</code></pre>
+<br>
+
+<h4>4.6. @Autowired 어노테이션 필수 여부</h4>
+<br>
+<ul>
+<li>@Autowired 할 대상의 의존 주입이 필수가 아닌 경우 예외를 방지하는 방법</li> 
+<li>1. @Autowired(required = false)로 지정해준다. 이 경우 세터 메서드가 호출 되지 않는다.</li>
+<li>2. Spring 5 부터는 자동 주입 대상 세터 메서드에 Optional을 사용할 수 있다.</li>
+<li>3. @Nullable 어노테이션을 사용. 이 경우 빈이 존재하지 않아도(null) 세터 메서드가 호출된다.</li>
+</ul>
+
+<pre><code>public class MemberPrinter(){
+    // required의 사용
+    private DateTimeFormatter dateTimeFormatter;
+    
+    @Autowired(required = false) // 해당 빈 객체가 없으면 실행하지 않는다.
+    public void setDateTimeFormatter(DateTimeFormatter dateTimeFormatter) {
+        this.dateTimeFormatter = dateTimeFormatter;
+    }
+}
+
+public class MemberPrinter(){
+    // Optional의 사용
+    private DateTimeFormatter dateTimeFormatter;
+
+    @Autowired // Optional의 isPresent() 메서드를 활용한다.
+    public void setDateTimeFormatter(Optional&lt;DateTimeFormatter&gt; formatter) {
+        if(!formatter.isPresent())
+            this.dateTimeFormatter = null;
+        else
+            this.dateTimeFormatter = formatter.get();
+    }
+}
+
+public class MemberPrinter(){
+    // @Nullable의 사용(해당 빈 객체가 존재하지 않아도 세터 메서드가 실행되어 null 주입)
+    private DateTimeFormatter dateTimeFormatter;
+
+    @Autowired
+    public void setDateTimeFormatter(@Nullable DateTimeFormatter dateTimeFormatter) {
+        this.dateTimeFormatter = dateTimeFormatter;
+    }
+}
+</code></pre>
+<br>
+
+<h4>4.7. 생성자 초기화와 필수 여부 지정 방식 동작 이해</h4>
+<br>
+<ul>
+<li>@Autowired의 required 속성을 false로 하면 빈 객체가 없더라도 자동 주입 대상에 null을 전달하지 않는다.</li>
+<li>반면 @Nullable은 빈 객체가 존재하지 않으면 자동 주입 대상에 null을 전달하여 초기화 한다.</li>
+<li>Optional은 매칭되는 빈 객체가 없으면 값이 없는 Optional 할당</li>
+</ul>
+
+<pre><code>public class MemberPrinter(){
+    //DateTimeFormatter 빈 객체가 있을 경우만 실행, 빈 객체가 없더라도 DateTimeFormatter에 null을 전달하지 않는다.
+    @Autowired(required = false) 
+    public void setDateTimeFormatter(DateTimeFormatter dateTimeFormatter) {
+        this.dateTimeFormatter = dateTimeFormatter;
+    }
+}
+
+public class MemberPrinter(){
+    //DateTimeFormatter 빈 객체가 없을 때도 실행, 빈 객체가 없으면 DateTimeFormatter에 null을 전달
+    @Autowired 
+    public void setDateTimeFormatter(@Nullable DateTimeFormatter dateTimeFormatter) {
+        this.dateTimeFormatter = dateTimeFormatter;
+    }
+}
+</code></pre>
+<br>
+
+<h4>4.8. 자동 의존 주입과 명시적 의존 주입 간의 관계</h4>
+<br>
+<ul>
+<li>@Configuration 클래스에서 세터를 통해 직접 의존을 주입했는데 자동 주입 대상일 경우, 자동 주입을 통해 일치하는 빈을 주입한다.</li>
+<li>그렇기 때문에 @Autowired 어노테이션을 사용했을 경우 자동 주입 기능을 사용하는 편이 낫다.</li>
+</ul>
+<br>
+
+<h1>Chapter 05. 컴포넌트 스캔</h1>
+<hr/>
+<br>
+
+<h4>5.1. @Component 어노테이션으로 스캔 대상 설정</h4>
+<br>
+<ul>
+<li>스프링이 검색해서 빈으로 등록 가능하려면 @Component 어노테이션을 붙여야 한다.</li>
+<li>@Component에 값을 안주면 기본값으로 클래스명의 첫 글자를 소문자로 바꾼 객체가 생성된다.</li>
+<li>@Component("listPrinter")와 같이 같을 줄 경우 해당 값을 빈 이름으로 사용한다.</li>
+<li>후에 MainForSpring에서 getBean()을 사용할 때 "listPrinter"라는 이름으로 불러올 수 있다.</li>
+</ul>
+<br>
+
+<h4>5.2. @ComponentScan 어노테이션으로 스캔 설정</h4>
+<br>
+<ul>
+<li>@Component 어노테이션을 붙인 클래스를 스프링 빈으로 등록하려면 설정 클래스에 @ComponentScan 어노테이션을 적용해야한다.</li>
+<li>@ComponentScan(basePackages = {"spring"})와 같이 지정하면 spring 패키지와 하위 패키지들의 모든 클래스가 스캔 대상이 된다.</li>
+<li>basePackages = {}의 속성값은 여러개가 될 수 있다.</li>
+</ul>
+<br>
+
+<h4>5.3. 스캔 대상에서 제외하거나 포함하기</h4>
+<br>
+<ul>
+<li>@ComponentScan 시 excludeFilters 속성을 사용하면 자동 스캔 대상에서 제외할 수 있다.</li>
+<li>@ComponentScan(basePackages = {"spring"}, excludeFilters = @Filter(type = FilterType.REGEX, pattern = "*DAO"))</li>
+<li>@ComponentScan(basePackages = {"spring"}, excludeFilters = @Filter(type = FilterType.ASPECTJ, pattern = "spring.*DAO"))</li>
+<li>FilterType은 REGEX(정규식), ANNOTATION 또는 ASPECTJ 패턴을 사용할 수 있다. ASPECTJ의 경우 aspectjweaver 모듈을 추가해야 한다.</li>
+<li>pattern 속성은 배열을 이용하여 한 개 이상 지정할 수 있다.</li>
+</ul>
+
+<pre><code>@Configuration
+// 어노테이션을 등록하여
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface ManualBean{
+}
+
+// 해당 어노테이션을 사용한 @Component 클래스 스캔 제외
+@Configuration
+@ComponentScan(basePackages = {"spring"},
+               excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = {ManualBean.class})
+               )       
+
+// FilterType.ASSIGNABLE_TYPE을 이용한 @Component 클래스 스캔 제외
+@ComponentScan(basePackages = {"spring"}, 
+               excludeFilters = @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = MemberDAO.class)
+               )
+</code></pre>
+<br>
+
+<h4>5.4. 기본 스캔 대상</h4>
+<br>
+<ul>
+<li>@Component, @Controller, @Service, @Repository, @Aspect, @Configuration</li>
+<li>위의 어노테이션을 붙인 클래스들이 @ComponentScan 대상에 포함된다.</li>
+<li>@Aspect 어노테이션을 제외한 나머지는 전부 @Component 어노테이션에 대한 특수 어노테이션이다.</li>
+<li>@Controller 어노테이션은 MVC와 관련이 있고 @Repository 어노테이션은 DB와 관련이 있다.</li>
+</ul>
+
+<pre><code>// @Controller 어노테이션의 선언부
+@Target({ElememtType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Component // @Component 어노테이션이 붙어 컴포넌트 스캔 대상에 포함한다. 
+public @interface Controller{
+    @AliasFor(annotation = Component.class)
+    String value() default "";
+}
+</code></pre>
+<br>
+
+<h4>5.5. 컴포넌스 스캔에 따른 충돌 처리</h4>
+<br>
+<ul>
+<li>컴포넌트 스캔 기능을 사용해서 자동으로 빈을 등록할 때, 빈 이름 충돌과 수동 등록 빈과의 충돌이 있을 수 있다.</li>
+<li>spring1 패키지와 spring2 패키지에 @Component를 적용한 MemberRegisterService라는 서로 다른 클래스가 존재할 때</li>
+<li>@ComponentScan(basePackages = {"spring1", "spring2"}) 두 패키지를 모두 스캔하면 BeanDefinitionStoreException이 발생</li>
+<li>만일 MemberDAO 클래스에 @Component 어노테이션을 붙이고 설정 클래스에 @Bean으로 memberDAO() 빈 메서드를 만들면</li>
+<li>객체명이 같아, 설정 클래스에 @Bean으로 수동으로 만들어준 빈 객체만 생성된다.</li>
+</ul>
+
+<pre><code>
+//설정 클래스
+@Configuration
+@ComponentScan(basePackages = {"spring"})
+public class ApplicationConfiguration{
+    //
+    ...생략...
+    @Bean
+    public MemberDAO memberDAO(){// 수동으로 만든 빈 객체가 @Component 객체보다 우선한다.
+        return new MemberDAO();
+    }
+}
+
+//MemberDAO 클래스
+@Component
+public class MemberDAO{
+    ...생략...
+}
+</code></pre>
+<br>
+
+<h1>Chapter 06. 빈 라이프사이클과 범위</h1>
+<hr/>
+<br>
+
+<h4>6.1. 컨테이너 초기화와 종료</h4>
+<br>
+<ul>
+<li>스프링 컨테이너는 초기화와 종료라는 라이프사이클을 갖는다.</li>
+<li>AnnotationConfigApplicationContext를 생성하는 시점에 빈 객체를 생성하고, 각 빈을 연결한다.</li>
+<li>컨테이너 초기화가 완료되면 컨테이너의 getBean() 등의 메서드를 사용가능하다.</li>
+<li>컨테이너 사용이 끝나면 컨테이너를 종료한다.</li>
+</ul>
+
+<pre><code>//1. 컨테이너 초기화
+AbstractApplicationContext applicationContext 
+                          = new AnnotationConfigApplicationContext(AppConfig.class);
+//2. 컨테이너에서 빈 객체를 구해서 사용
+Greeter greeter = applicationContext.getBean("greeter", Greeter.class);
+String msg = greeter.greet("스프링");
+System.out.println(msg);
+//3. 컨테이너 종료
+applicationContext.close();
+</code></pre>
+<br>
+
+<h4>6.2. 스프링 빈 객체의 라이프사이클</h4>
+<br>
+<ul>
+<li>스프링 컨테이너는 빈 객체의 라이프사이클을 관리한다. 다음은 빈 객체의 라이프사이클이다.</li>
+<li>객체 생성 -> 의존 설정 -> 초기화 -> 소멸</li>
+</ul>
+<br>
+
+<b>스프링 인터페이스를 활용한 빈 객체의 초기화와 소멸</b>
+<br>
+<ul>
+<li>스프링 인터페이스를 이용한 빈 객체의 초기화와 소멸</li>
+<li>스프링 컨테이너는 빈 객체를 초기화하고 소멸하기 위해 지정한 메서드를 호출한다.</li>
+<li>초기화와 소멸 과정이 필요한 예에는 데이터베이스 커넥션 풀이 있다. 초기화 시 Connection을 생성하고 소멸 시 close()한다.</li>
+</ul>
+
+<pre><code>//빈 객체를 초기화하고 소멸하기 위한 메서드
+public interface InitializingBean{// 빈 객체 생성이 완료된 후 호출
+    void afterPropertiesSet() throws Exception;
+}
+
+public interface DisposableBean{
+    void destroy() throws Exception;// 스프링 컨테이너를 종료할 때 호출
+}
+</code></pre>
+<br>
+
+<b>커스텀 메서드를 활용한 빈 객체의 초기화와 소멸</b>
+<br>
+<ul>
+<li>모든 클래스가 InitializingBean, DisposableBean 인터페이스를 상속받아 구현할 수 있지 않다.</li>
+<li>위 인터페이스를 구현한 클래스가 아닌 다른 클래스를 스프링 빈 객체로 설정할 수 있다.</li>
+<li>@Bean 태그의 initMethod, destroyMethod 속성을 이용하면 된다.</li>
+<li>@Bean(initMethod="connect", destroyMethod="close") 여기서 connect()와 close() 메서드에는 매개변수가 없어야한다.</li>
+</ul>
+<br>
+
+<h4>6.3. 빈 객체의 생성과 관리 범위</h4>
+<br>
+<ul>
+<li>기본적으로 getBean()으로 빈 객체 생성 시 싱글톤(singleton) 범위(scope)를 갖는다.</li>
+<li>사용 빈도가 낮으나 프로토타입(prototype) 빈 생성 범위를 설정할 수도 있다.</li>
+<li>@Bean 아래에 @Scope("prototype") 범위로 설정해주면 된다.</li>
+<li>prototype의 빈 객체는 스프링 컨테이너 종료 시 소멸 메서드를 실행하지 않기에, 소멸 처리 코드를 직접 작성해야 한다.</li>
+</ul>
+<br>
+
+<h1>Chapter 07. AOP 프로그래밍</h1>
+<hr/>
+<br>
+
