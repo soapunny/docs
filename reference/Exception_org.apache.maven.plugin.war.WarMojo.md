@@ -1,4 +1,4 @@
-<h1>org.apache.maven.plugin.war.WarMojo의 해결</h1><hr>
+<h1>org.apache.maven.plugin.war.WarMojo의 해결방안</h1><hr>
 <br>
 
 <ol>
