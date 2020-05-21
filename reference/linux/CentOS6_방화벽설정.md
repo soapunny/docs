@@ -42,3 +42,16 @@ FORWARD - 호스트 컴퓨터가 목적지가 아닌 모든 패킷, 즉 라우�
 # 차단
 -A INPUT -p tcp -dport 443 -j DROP</code></pre>
 <br><br>
+
+
+<h3>4. 방화벽 정책 저장 및 재구동</h3>
+<br>
+
+<pre><code># 정책 저장
+# service iptables save
+
+# 저장 확인
+# vi /etc/sysconfig/iptables
+
+# 반영을 위해 서비스 재구동
+# service iptables restart
