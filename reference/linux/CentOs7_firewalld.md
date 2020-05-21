@@ -10,7 +10,7 @@
 <p>여기서 현재 실행 중이면 running, 실행 중이 아니면 not running을 출력한다.<br>
 만일 command not found가 출력된다면 firewall을 설치해야 한다.</p><br>
 
-<h3>Firewall 설치 전 yum install이 사용가능한지 점검</h3>
+<h3>Firewall 설치 전 리파지토리로부터 yum install을 할 수  점검</h3>
 
 <pre><code># vi /etc/yum.repos.d/[*.repo]
 </code></pre>
