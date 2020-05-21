@@ -93,6 +93,16 @@
 <pre><code># firewall-cmd --list-all
 
 # 리스트 출력 
-public (default) interfaces: sources: 192.168.2.100 192.168.0.0/24 services: dhcpv6-client ssh ports: 80/tcp 6000-9000/tcp masquerade: no forward-ports: icmp-blocks: rich rules: rule family="ipv4" source address="192.168.0.100" rule family="ipv4" source address="192.168.5.100" reject rule family="ipv4" source address="192.168.10.101" port port="80" protocol="tcp" accept
+public (default) 
+interfaces: sources: 192.168.2.100 192.168.0.0/24 
+services: dhcpv6-client ssh 
+ports: 80/tcp 6000-9000/tcp 
+masquerade: no 
+forward-ports: 
+icmp-blocks: 
+rich rules: 
+rule family="ipv4" source address="192.168.0.100" 
+rule family="ipv4" source address="192.168.5.100" reject 
+rule family="ipv4" source address="192.168.10.101" port port="80" protocol="tcp" accept
 </code></pre>
 <br><br>
