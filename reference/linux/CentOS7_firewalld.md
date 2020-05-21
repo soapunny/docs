@@ -1,4 +1,4 @@
-<h1>CentOs7 서버 방화벽 설치(filewall installation in CentOs7)</h1><hr>
+<h1>CentOS7 서버 방화벽 설치(filewall installation in CentOs7)</h1><hr>
 <br><br>
 
 <h3>Firewall 상태 확인</h3>
