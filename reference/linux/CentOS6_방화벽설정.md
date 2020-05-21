@@ -24,9 +24,9 @@ FORWARD - 호스트 컴퓨터가 목적지가 아닌 모든 패킷, 즉 라우�
 <pre><code># 방화벽 설정 문서 실행
 # vi /etc/sysconfig/iptables
 
-# 허용
+## 허용
 -A INPUT -s [IP주소] -j ACCEPT
-# 차단
+## 차단
 -A INPUT -s [IP주소] -j DROP</code></pre>
 <br><br>
 
@@ -37,9 +37,9 @@ FORWARD - 호스트 컴퓨터가 목적지가 아닌 모든 패킷, 즉 라우�
 <pre><code># 방화벽 설정 문서 실행
 # vi /etc/sysconfig/iptables
 
-# 허용
+## 허용
 -A INPUT -p tcp -dport 80 -j ACCEPT
-# 차단
+## 차단
 -A INPUT -p tcp -dport 443 -j DROP</code></pre>
 <br><br>
 
