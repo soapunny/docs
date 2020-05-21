@@ -17,6 +17,7 @@
 <pre><code># cd/etc/yum.repos.d/
 # ls
 </code></pre>
+<br>
 
 <p>해당 명령어로 기본 리파지토리로 이동 및 .repo 파일들을 확인한다.<br>
-기존 *.repo 파일들은 백업해준다.</p>
+기존 *.repo 파일들은 백업해준다. [백업폴더생성] 파일 참</p>
