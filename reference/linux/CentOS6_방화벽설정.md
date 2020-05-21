@@ -44,7 +44,22 @@ FORWARD - 호스트 컴퓨터가 목적지가 아닌 모든 패킷, 즉 라우�
 <br><br>
 
 
-<h3>4. 방화벽 정책 저장 및 재구동</h3>
+<h3>4. 외부 IP에서 목적지 IP 해당 Port 접근 허용 및 차단</h3>
+<br>
+
+<pre><code># 방화벽 설정 문서 실행
+# vi /etc/sysconfig/iptables
+
+## 허용
+-A INPUT -s 111.111.111.11 -d 222.22.22.222 -p tcp --dport 80 -j ACCEPT
+## 차단
+-A INPUT -s 111.111.111.11 -d 222.22.22.222 -p tcp --dport 80 -j DROP</pre></code>
+<br>
+<p>외부 IP 111.111.111.11에서 목적지 IP 222.22.22.222의 80 포트로 접근을 허용/차단</p>
+<br><br>
+
+
+<h3>5. 방화벽 정책 저장 및 재구동</h3>
 <br>
 
 <pre><code># 정책 저장
