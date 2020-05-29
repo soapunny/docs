@@ -10,6 +10,7 @@
   <li>실행되지 않는다면 cmd를 켜서 lombok.jar 위치로 이동 후 java -jar lombok-버전.jar를 이용하여 설치한다. </li>
   <li>시스템 환경변수 설정의 자바 path가 정확하지 않으면 에러가 날 수 있다.</li>
   <li>설치화면에서 Specific Location ..을 클릭 후 해당 이클립스 실행파일을 찾은 후 Install/Update를 클릭하여 설치한다. </li>
+  <li>설치가 잘 되었다면 eclipse.ini에 lombok 관련 line이 추가된것을 확인할 수 있다.</li>
 </ul>
 <br><br>
 
