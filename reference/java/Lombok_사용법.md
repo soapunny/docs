@@ -3,7 +3,12 @@
 
 <h3>1. 롬복 의존성 등록</h3>
 <br>
-<p>https://mvnrepository.com/ 에서 Project Lombok의 dependency를 찾아 pom.xml에 등록</p>
+<ul>
+  <li>https://mvnrepository.com/ 에서 Project Lombok의 dependency를 찾아 pom.xml에 등록한다. </li>
+  <li>이클립스를 종료한다. </li>
+  <li>[해당 프로젝트에서 사용중인 JDK 경로]\jre\bin에 있는 java.exe로 [maven]\repository\org\projectlombok\lombok\롬복버전\lombok-버전.jar를 실행한다. </li>
+  <li>설치화면에서 Specific Location ..을 클릭 후 해당 이클립스 실행파일을 찾은 후 Install/Update를 클릭하여 설치한다. </li>
+</ul>
 <br><br>
 
 <h3>2. Getter, Setter, toString 자동 생성</h3>
