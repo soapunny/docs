@@ -27,5 +27,5 @@ http://maven.egovframe.kr:8080/maven/
 <li>eclipse window-preferences-maven-usersetting 다시 확인</li>
 <li>톰캣 서버 디렉토리 재확인</li>
 <li>프로젝트 우클릭-Maven-UpdateProject를 선택, Force Update에 체크후 저장소 초기화 후 재기동</li>
-<li>&lt;pluginRepositories&gt;에 mvn2를 작성해준다.</li>
+<li>&lt;pluginRepositories&gt;&lt;pluginRepository&gt;에 mvn2를 작성해준다.</li>
 </ul>
