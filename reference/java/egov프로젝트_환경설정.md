@@ -28,4 +28,6 @@ http://maven.egovframe.kr:8080/maven/
 <li>톰캣 서버 디렉토리 재확인</li>
 <li>프로젝트 우클릭-Maven-UpdateProject를 선택, Force Update에 체크후 저장소 초기화 후 재기동</li>
 <li>&lt;pluginRepositories&gt;&lt;pluginRepository&gt;에 mvn2 repository를 등록해준다.</li>
+<li>eclipse.ini에 -vm이 작성되어있다면 지금 쓰는 자바 버전이 맞는지 체크</li>
+<li>프로젝트 경로에 한글이나 _-.이외의 기타 다른 문자가 들어가 있지 않은지 체크</li>
 </ul>
