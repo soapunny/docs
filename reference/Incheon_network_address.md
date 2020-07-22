@@ -2,10 +2,10 @@
 <br>
 
 <h3>#네트워크 설명</h3>
-
-    컴퓨터             속도           회선사용방식
-    Com1, Com2        500Mb/s         회선공유
-    Com3              100Mb/s         단독회선
+<pre><code>컴퓨터             속도           회선사용방식
+Com1, Com2        500Mb/s         회선공유
+Com3              100Mb/s         단독회선
+</code></pre>
 
 <h3>#Com1</h3>
 <ul>
