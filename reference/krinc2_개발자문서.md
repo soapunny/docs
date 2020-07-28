@@ -17,7 +17,7 @@ jdk-version           jdk-8u251
 </code></pre>
 <br>
 
-<h4>1-3. krinc2 서버  변경</h4><br>
+<h4>1-3. krinc2 서버 변경</h4><br>
 <ol>
 <li><b>이클립스</b>를 연다.
 <li>src/main/java의 kr.co.unipatro.krinc.config.<b>ServerConfig.java</b> 파일을 연다.</li>
