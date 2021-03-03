@@ -25,11 +25,20 @@
 </pre>
 <br>
 
-<h3>3. Git remote</h3>
+<h3>3. Git Remote</h3>
 <pre>
 <code>
   1. git remote add origin "URL" : Add remote repository
   2. git remote remove origin : delete remote repository
+</code>
+</pre>
+<br>
+
+<h3>3. Git Modification</h3>
+<pre>
+<code>
+  1. git checkout [파일명]: 해당 파일을 수정전 상태로 되돌린다.
+  2. 
 </code>
 </pre>
 <br>
