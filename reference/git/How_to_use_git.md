@@ -37,7 +37,7 @@
 <h3>3. Git Modification</h3>
 <pre>
 <code>
-  1. git checkout [파일명]: 해당 파일을 수정전 상태로 되돌린다.
+  1. git checkout [파일명]: Rollback the file.
   2. 
 </code>
 </pre>
