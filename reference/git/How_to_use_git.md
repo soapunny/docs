@@ -25,10 +25,11 @@
 </pre>
 <br>
 
-<h3>3. Git command change</h3>
+<h3>3. Git remote</h3>
 <pre>
 <code>
-  1. 
+  1. git remote add origin "URL" : Add remote repository
+  2. git remote remove origin : delete remote repository
 </code>
 </pre>
 <br>
