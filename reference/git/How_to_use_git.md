@@ -37,8 +37,10 @@
 <h3>4. Git Modification</h3>
 <pre>
 <code>
-  1. git checkout [파일명]: Rollback the file.
-  2. git log : Show your commit history.
+  1. git log : Show your commit history.
+  2. git checkout [파일명]: Rollback the file.
+  3. git reset [commit hashcode] : Rollback to the previous commit.
+  4. git rever [commit hashcode] : Cover the latest commit with the last commit.
 </code>
 </pre>
 <br>
