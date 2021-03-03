@@ -38,7 +38,7 @@
 <pre>
 <code>
   1. git checkout [파일명]: Rollback the file.
-  2. git log : commit한 로그 기록을 볼 수 있다.
+  2. git log : Show your commit history.
 </code>
 </pre>
 <br>
