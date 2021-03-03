@@ -14,7 +14,7 @@
 <h3>2. Push</h3>
 <pre>
 <code>
-  1. 해당 깃파일에서 오른쪽 클릭을 한 후 git bash를 실행한다.(또는 cd 명령어로 해당 위치로 찾아간다)
+  1. Open the git bash(right click and choose the "execute git bash" on the local repository folder)
   2. git add [파일명] : 해당 파일을 commit을 위한 tracked 상태로 만든다.
   3. git status : 현재 진행 상태를 확인할 수 있다.
   4. git rm --cached [파일명] : add 한 파일을 해제할 수 있다.
