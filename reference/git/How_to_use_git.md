@@ -4,9 +4,9 @@
 <h3>1. Registration for User Infomation</h3>
 <pre>
 <code>
-  1. git bash를 켠다.
-  2. git config --global user.name "사용자 이름"
-  3. git config --global user.email "사용자 이메일"
+  1. Open the git bash.
+  2. git config --global user.name "USER_NAME" : registrate your name to the local repository.
+  3. git config --global user.email "USER_EMAIL" : registrate your email to the local repository.
 </code>
 </pre>
 <br>
