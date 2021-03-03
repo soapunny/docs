@@ -20,7 +20,15 @@
   4. git rm --cached [파일명] 명령어로 add 한 파일을 해제할 수 있다.
   5. git add . : untacked된 파일을 전부 add 한다.(git add *.txt : txt파일들을 전부 add한다)
   6. git commit -m "메시지" : 커밋을 진행한다.
+  7. git log : commit한 로그 기록을 볼 수 있다.
 </code>
 </pre>
 <br>
 
+<h3>3. Git command change</h3>
+<pre>
+<code>
+  1. 
+</code>
+</pre>
+<br>
