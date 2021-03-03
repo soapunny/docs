@@ -34,7 +34,7 @@
 </pre>
 <br>
 
-<h3>3. Git Modification</h3>
+<h3>4. Git Modification</h3>
 <pre>
 <code>
   1. git checkout [파일명]: Rollback the file.
