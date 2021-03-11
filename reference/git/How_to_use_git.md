@@ -41,6 +41,7 @@
   2. git checkout [파일명]: Rollback the file.
   3. git reset [commit hashcode] : Rollback to the previous commit.
   4. git rever [commit hashcode] : Cover the latest commit with the last commit.
+  5. rm -r .git : Cancel the git init command and delete the .git folder
 </code>
 </pre>
 <br>
