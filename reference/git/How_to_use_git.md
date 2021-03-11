@@ -42,6 +42,7 @@
   3. git reset [commit hashcode] : Rollback to the previous commit.
   4. git rever [commit hashcode] : Cover the latest commit with the last commit.
   5. rm -r .git : Cancel the git init command and delete the .git folder
+  6. git reset : Cancel the git add command
 </code>
 </pre>
 <br>
