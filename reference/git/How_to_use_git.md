@@ -46,3 +46,12 @@
 </code>
 </pre>
 <br>
+
+<h3>5. Git Branch</h3>
+<pre>
+<code>
+  1. git branch [Branch Name] : create a branch with it's name
+  2. git checkout [Branch Name] : change the branch with it's name
+</code>
+</pre>
+<br>
