@@ -47,11 +47,12 @@
 </pre>
 <br>
 
-<h3>5. Git Branch</h3>
+<h3>5. Git Branch & Merge</h3>
 <pre>
 <code>
   1. git branch [Branch Name] : create a branch with it's name
   2. git checkout [Branch Name] : change the branch with it's name
+  3. git merge [TargetBranch] : change the current location of the branch into the target branch's location(fast-forward)
 </code>
 </pre>
 <br>
