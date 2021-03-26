@@ -53,6 +53,7 @@
   1. git branch [Branch Name] : create a branch with it's name
   2. git checkout [Branch Name] : change the branch with it's name
   3. git merge [TargetBranch] : change the current location of the branch into the target branch's location(fast-forward)
+  4. git push origin --delete [Branch Name] : delete the branch on it's name
 </code>
 </pre>
 <br>
