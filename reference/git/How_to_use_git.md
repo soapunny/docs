@@ -5,8 +5,11 @@
 <pre>
 <code>
   1. Open the git bash.
-  2. git config --global user.name "USER_NAME" : registrate your name to the local repository.
-  3. git config --global user.email "USER_EMAIL" : registrate your email to the local repository.
+  2. git config --global user.name "USER_NAME" : registrate or renew your name to the local repository.
+  3. git config --global user.email "USER_EMAIL" : registrate or renew your email to the local repository.
+  4. git config user.name : check current username
+  5. git config user.email: check current useremail
+  6. 
 </code>
 </pre>
 <br>
