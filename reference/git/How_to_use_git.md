@@ -9,7 +9,6 @@
   3. git config --global user.email "USER_EMAIL" : registrate or renew your email to the local repository.
   4. git config user.name : check current username
   5. git config user.email: check current useremail
-  6. 
 </code>
 </pre>
 <br>
