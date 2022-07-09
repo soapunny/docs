@@ -32,6 +32,7 @@
 <code>
   1. git remote add origin "URL" : Add remote repository
   2. git remote remove origin : delete remote repository
+  3. git rm --cached -r [Folder/File]: Remove [Folder/File] in remote repository. Not from local repo.
 </code>
 </pre>
 <br>
