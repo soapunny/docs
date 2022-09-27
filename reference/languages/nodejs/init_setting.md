@@ -51,7 +51,34 @@
         //To understand text messages.
         app.use(express.json());
         ```
-</br></br>
+
++ __express-session__
+    - role: Create a session middleware with the given options.
+    - install: ```npm i express-session```
+    - usecase:
+        ``` js
+        //server.js
+        app.set('trust proxy', 1); //trust first proxy
+        app.use(session({
+            secret: process.env.COOKIE_SECRET,
+            resave: false,
+            saveUnintialized: true,
+            cookie: {
+                secure: true,
+                maxAge: 1000 * 60 * 30, // millisec, total: 30 mins
+            }
+        }));
+        ```
+
++ __express-flash__
+    - role: Flash is an extension of connect-flash with the ability to define a flash message and render it without redirecting the request.
+    - install: ```npm i express-flash```
+    - usecase:
+        ``` js
+        //server.js
+        import flash from "express-flash";
+        app.use(flash());
+        ```
 
 + __babel__
     - role: helps you to write code in the latest version of Javascript.
@@ -108,21 +135,22 @@
         const morgan = require('morgan');
         ```
 
-+ __express-session__
-    - role: Create a session middleware with the given options.
-    - install: ```npm i express-session```
++ __connect-mongo__
+    - role: MongoDB session store for Connect and Express written in Typescript.
+    - install: ```npm install connect-mongo```
     - usecase:
         ``` js
         //server.js
-        app.set('trust proxy', 1); //trust first proxy
+        import MongoStore from "connect-mongo";
+
         app.use(session({
             secret: process.env.COOKIE_SECRET,
-            resave: false,
-            saveUnintialized: true,
+            resave: false,//Only remember someone who login
+            saveUninitialized: false,
             cookie: {
-                secure: true,
-                maxAge: 1000 * 60 * 30, // millisec, total: 30 mins
-            }
+                maxAge: 1000 * 60 * 30,
+            },
+            store: MongoStore.create({mongoUrl: process.env.MONGO_DB_URL}),//Save session in MongoDB
         }));
         ```
 + __mongoose__
@@ -148,15 +176,29 @@
         app.set("view engine", "pug");
         app.set("views", process.cwd() + "/src/views"); //Change process's current directory.
         ```
-+ __express-flash__
-    - role: Flash is an extension of connect-flash with the ability to define a flash message and render it without redirecting the request.
-    - install: ```npm i express-flash```
+
++ __node-fetch__
+    - role: A light-weight module that brings Fetch API to Node.js.
+    - install: ```npm install node-fetch```
     - usecase:
         ``` js
-        //server.js
-        import flash from "express-flash";
-        app.use(flash());
+        import fetch from 'node-fetch';
+        
+        const body = {a: 1};
+        const response = await fetch('https://httpbin.org/post', {
+            method: 'post',
+            body: JSON.stringify(body),
+            headers: {'Content-Type': 'application/json'}
+        });
+        const data = await response.json();
         ```
+
+</br>
+
+
+### __Dependencies for Webpack__
+</br></br>
+
 + __webpack__
     - role: Webpack is a bundler for modules. The main purpose is to bundle Javascript files for usage in a browser.
     - install: ```npm i --save-dev webpack```
@@ -165,7 +207,6 @@
         //webpack.config.js
         const path = require("path");
         const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
         const BASE_JS_ROOT = "./src/client/js/";
 
         //path.resolve(__dirname, "assets", "js") => add up the paths together.
@@ -211,13 +252,26 @@
             },
         };
         ```
-+ __MiniCssExtractPlugin__
++ __miniCssExtractPlugin__
     - role: This plugin extracts CSS into separate files. It creates a CSS file per JS file which contains CSS. It supports On-Demand-Loading of CSS and SourceMaps.
     - install: ```npm install --save-dev mini-css-extract-plugin```
-    - usecase:
-        ``` js
-        // In the webpack usecase.
-        ```
+
++ __babelLoader__
+    - role: This package allows transpiling Javascript files using Babel and webpack.
+    - install: ```npm install -D babel-loader @babel/core @babel/preset-env webpack```
+
++ __styleLoader__
+    - role: Inject CSS into the DOM
+    - install: ```npm install --save-dev style-loader```
+
++ __cssLoader__
+    - role: The css-loader interprets @import and url() like import/require() and will resolve them.
+    - install: ```npm install --save-dev css-loader```
+
++ __sassLoader__
+    - role: Loads a Sass/SCSS file and compiles it to CSS.
+    - install: ```npm install sass-loader sass webpack --save-dev```
+
 </br>
 
 
