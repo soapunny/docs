@@ -206,18 +206,23 @@
         ``` js
         //webpack.config.js
         const path = require("path");
+        const webpack = require('webpack');
         const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
         const BASE_JS_ROOT = "./src/client/js/";
 
         //path.resolve(__dirname, "assets", "js") => add up the paths together.
         module.exports = {
             entry: {
+                login: `${BASE_JS_ROOT}login.js`,
                 main: `${BASE_JS_ROOT}main.js`,
-                videoPlayer: `${BASE_JS_ROOT}videoPlayer.js`,
             },
-            plugins: [new MiniCssExtractPlugin({
-                filename: "css/styles.css",
-            })],
+            plugins: [
+                new MiniCssExtractPlugin({
+                    filename: "css/styles.css",
+                }), 
+                new webpack.HotModuleReplacementPlugin()
+            ],
             output: {
                 filename: "js/[name].js",
                 path: path.resolve(__dirname, "assets"),
@@ -232,7 +237,8 @@
                         loader: 'babel-loader',
                         options: {
                             presets: [
-                            ['@babel/preset-env', { targets: "defaults" }]
+                            ['@babel/preset-env', { targets: "defaults" }],
+                            '@babel/preset-react'
                             ],
                         },
                         },
