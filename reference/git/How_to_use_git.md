@@ -48,3 +48,10 @@
 4. git push origin --delete [Branch Name] : delete the branch from the remote repository
 5. git branch -D [Branch Name] : force to delete the branch from local repository
 <br>
+
+### <b>6. Git Pull</b>
+1. git fetch origin [Branch Name]
+2. git pull origin [Branch Name] : pull data from the remote repository
+3. git pull origin [Branch Name] --allow-unrelated-histories : force to merge when it refuse to merge unrelated histories.
+<br>
+
