@@ -12,12 +12,12 @@
 ```json
     //when you call deploy, it will call predeploy first.
     "scripts": {
-    ...
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build"
+        ...
+        "deploy": "gh-pages -d build",
+        "predeploy": "npm run build"
     },
     "dependencies": {
-    ...
+        ...
     },//Register server
     "homepage": "https://[github-username].github.io/[project-name]"
 ```
