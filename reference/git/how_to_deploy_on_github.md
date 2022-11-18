@@ -6,7 +6,7 @@
 1. Add remote to the current project.
 2. Install 'gh-pages' package.
 ```
- $  npm i gh-pages
+    $   npm i gh-pages
 ```
 3. open package.json and write as below.
 ```json
@@ -23,7 +23,7 @@
 ```
 4. deploy build file to the remote server.(It might take time)
 ```
- $  npm run deploy
+    $  npm run deploy
 ```
 5. Few minutes later, connect to the url you wrote.
 ```
