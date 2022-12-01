@@ -3,7 +3,7 @@
 
 ## Fire TV cube
 ```
-If your Fire TV Cube is unresponsive, or you want to erase your device settings, press and hold the Volume Down and Mute buttons until the light flashes blue (about 40 seconds).
+Press and hold the Volume Down and Mute buttons until the light flashes blue (about 40 seconds).
 
 1. Go to Settings.
 2. Select My Fire TV.
