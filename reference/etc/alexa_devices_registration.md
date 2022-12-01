@@ -5,6 +5,7 @@
 ```
 1. Connect to TV using HDMI cable.
 2. Turn on the TV and follow the instructions.
+3. Change the name to "Fire TV Cube".
 ```
 <br />
 
@@ -69,5 +70,6 @@
 1. Open Amazon Alexa App, in the Devices menu on the bottom, click "Add devices".
 2. Select Amazon Echo - Echo, Echo Dot, Echo Plus and more ...
 3. Follow the instructions.
+4. Change the name to "Echo dot".
 ```
 <br />
