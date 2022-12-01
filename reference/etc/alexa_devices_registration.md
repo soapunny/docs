@@ -15,14 +15,15 @@
     2. Click +, and add the first Smart Coffee Maker on the list.
     3. Set the network.
     4. Check if WIFI icon on the coffee maker is blinking. If it doens't blink, <a href='https://github.com/soapunny/docs/blob/master/reference/etc/alexa_devices_reset.md'>Check here</a>
-    6. Follow the instructions on the app and finish connection.
+    5. Follow the instructions on the app and finish connection.
 
 > Alexa App Setup
     1. Open Amazon Alexa App, select more menu on the bottom and click "Skill & Games"
-    2. Click search icon on the right-top and Search "Smart Life"
+    2. Click search icon on the right-top and Search "Atomi Smart"
     3. Link the app to Alexa App.
-    4. Once it's done, go to the Devices menu and search Smart Life light
+    4. Once it's done, go to the Devices menu and search Atomi Smart Coffee Maker
     5. Push the "Discover Devices" button.
+    6. Change the name to "Coffee Maker".
 </pre>
 <br />
 
@@ -37,8 +38,8 @@
     2. Click search icon on the right-top and Search "Google Nest"
     3. Link the app to Alexa App.
     4. Once it's done, go to the Devices menu and search "Google Nest Thermostat"
-    5. Push the "Discover Devices" button.  
-
+    5. Push the "Discover Devices" button.
+    6. Change the name to "Thermostat".
 ```
 <br />
 
@@ -59,6 +60,7 @@
     3. Link the app to Alexa App.
     4. Once it's done, go to the Devices menu and search Smart Life light
     5. Push the "Discover Devices" button.
+    6. Change the name to "Bedroom Light".
 </pre>
 <br />
 
