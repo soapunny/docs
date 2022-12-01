@@ -12,12 +12,12 @@ If your Fire TV Cube is unresponsive, or you want to erase your device settings,
 <br />
 
 ## Smart Coffee Maker
-```
+<pre>
 1. Press and hold the Power button for 10 seconds. 
 2. The WiFi indicator on the LCD panel should start flashing.
 
-[Read more](https://manuals.plus/atomi-smart/atomi-smart-at1528-coffee-maker-user-guide#ixzz7mENuxAax).
-```
+>> <a href="https://manuals.plus/atomi-smart/atomi-smart-at1528-coffee-maker-user-guide#ixzz7mENuxAax">Read More</a>
+</pre>
 <br />
 
 ## Google Nest Thermostat
