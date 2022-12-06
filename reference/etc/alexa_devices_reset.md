@@ -5,43 +5,53 @@
 
 1. Say "Alex, go to the settings." or Turn on the TV and go to Settings and then select the My Fire TV.
 
-![Settings](./resources/photos/fireTvSettings.jpg)
+    ![Settings](./resources/photos/fireTvSettings.jpg)
+    <br/><br/>
 
 2. Select "Reset to Factory Defaults" and confirm the following alert.
 
-![Reset](./resources/photos/fireTvFactoryReset.JPG)
+    ![Reset](./resources/photos/fireTvFactoryReset.JPG)
+    <br/><br/>
 
 3. Wait until it finish rebooting.
 
-![Waiting](./resources/photos/fireTvFactoryReset_waiting.JPG)
+    ![Waiting](./resources/photos/fireTvFactoryReset_waiting.JPG)
+    <br/><br/>
 
 4. Push play/pause button on your firetv remote.
 
-![Restart](./resources/photos/fireTvFactoryReset_restart.jpg)
+    ![Restart](./resources/photos/fireTvFactoryReset_restart.jpg)
+    <br/><br/>
 
 5. Choose English.
 
-![Language](./resources/photos/fireTvFactoryReset_language.jpg)
+    ![Language](./resources/photos/fireTvFactoryReset_language.jpg)
+    <br/><br/>
 
 6. Select "Set Up with Remote"
 
-![SetUpWithRemote](./resources/photos/fireTvFactoryReset_setUpWithRemote.jpg)
+    ![SetUpWithRemote](./resources/photos/fireTvFactoryReset_setUpWithRemote.jpg)
+    <br/><br/>
 
 7. Connect to the Wifi
 
-![NetworkSetting](./resources/photos/fireTvFactoryReset_networkSetting.jpg)
+    ![NetworkSetting](./resources/photos/fireTvFactoryReset_networkSetting.jpg)
+    <br/><br/>
 
 8. Pick one (your amazon account ex. soap.s@smartland.com)
 
-![SignIn](./resources/photos/fireTvFactoryReset_signIn.jpg)
+    ![SignIn](./resources/photos/fireTvFactoryReset_signIn.jpg)
+    <br/><br/>
 
 9. Go to amazon.com/code and sign with your account.
 
-![SignInOnline](./resources/photos/fireTvFactoryReset_signInOnline.jpg)
+    ![SignInOnline](./resources/photos/fireTvFactoryReset_signInOnline.jpg)
+    <br/><br/>
 
 10. Regist your device code on 9.
 
-![Code](./resources/photos/fireTvFactoryReset_code.jpg)
+    ![Code](./resources/photos/fireTvFactoryReset_code.jpg)
+    <br/><br/>
 
 11. Follow the direction and set the device name [DeviceName] - [BuildingName][UnitNumber]. 
 ```
@@ -84,13 +94,3 @@
 3. Your device enters setup mode. For setup instructions, go to Set Up Your Echo Dot.
 ```
 <br />
-
-<style>
-img {
-    width: 40vw;
-    height: 30vh;
-    padding-left: 10vw;
-    padding-bottom: 5vh; 
-    padding-top: 2vh;
-}
-</style>
