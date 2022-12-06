@@ -3,11 +3,46 @@
 
 
 ## Fire TV cube
-```
 1. Connect to TV using HDMI cable.
-2. Turn on the TV and follow the instructions.
-```
-<br />
+
+2. Push play/pause button on your firetv remote.
+
+    ![Restart](./resources/photos/fireTvFactoryReset_restart.jpg)
+    <br/><br/>
+
+3. Choose English.
+
+    ![Language](./resources/photos/fireTvFactoryReset_language.jpg)
+    <br/><br/>
+
+4. Select "Set Up with Remote"
+
+    ![SetUpWithRemote](./resources/photos/fireTvFactoryReset_setUpWithRemote.jpg)
+    <br/><br/>
+
+5. Connect to the Wifi
+
+    ![NetworkSetting](./resources/photos/fireTvFactoryReset_networkSetting.jpg)
+    <br/><br/>
+
+6. Pick one (your amazon account ex. soap.s@smartland.com)
+
+    ![SignIn](./resources/photos/fireTvFactoryReset_signIn.jpg)
+    <br/><br/>
+
+7. Go to amazon.com/code and sign with your account.
+
+    ![SignInOnline](./resources/photos/fireTvFactoryReset_signInOnline.jpg)
+    <br/><br/>
+
+8. Regist your device code on 9.
+
+    ![Code](./resources/photos/fireTvFactoryReset_code.jpg)
+    <br/><br/>
+
+9. Follow the direction and set the device name. <a href='https://github.com/soapunny/docs/blob/master/reference/etc/alexa_devices_reset.md'>&rarr; Set Device Name.</a>
+<br /><br />
+
 
 ## Smart Coffee Maker
 <pre>

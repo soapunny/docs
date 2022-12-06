@@ -2,7 +2,6 @@
 <br />
 
 ## __Fire TV cube__
-
 1. Say "Alex, go to the settings." or Turn on the TV and go to Settings and then select the My Fire TV.
 
     ![Settings](./resources/photos/fireTvSettings.jpg)
@@ -17,80 +16,40 @@
 
     ![Waiting](./resources/photos/fireTvFactoryReset_waiting.JPG)
     <br/><br/>
-
-4. Push play/pause button on your firetv remote.
-
-    ![Restart](./resources/photos/fireTvFactoryReset_restart.jpg)
-    <br/><br/>
-
-5. Choose English.
-
-    ![Language](./resources/photos/fireTvFactoryReset_language.jpg)
-    <br/><br/>
-
-6. Select "Set Up with Remote"
-
-    ![SetUpWithRemote](./resources/photos/fireTvFactoryReset_setUpWithRemote.jpg)
-    <br/><br/>
-
-7. Connect to the Wifi
-
-    ![NetworkSetting](./resources/photos/fireTvFactoryReset_networkSetting.jpg)
-    <br/><br/>
-
-8. Pick one (your amazon account ex. soap.s@smartland.com)
-
-    ![SignIn](./resources/photos/fireTvFactoryReset_signIn.jpg)
-    <br/><br/>
-
-9. Go to amazon.com/code and sign with your account.
-
-    ![SignInOnline](./resources/photos/fireTvFactoryReset_signInOnline.jpg)
-    <br/><br/>
-
-10. Regist your device code on 9.
-
-    ![Code](./resources/photos/fireTvFactoryReset_code.jpg)
-    <br/><br/>
-
-11. Follow the direction and set the device name [DeviceName] - [BuildingName][UnitNumber]. 
-```
-    //Examples
-    Fire TV Cube - BW109
-    Fire TV Cube - WG229
-```
-
+    
 <br /><br />
 
-## Smart Coffee Maker
-<pre>
-1. Press and hold the Power button for 10 seconds. 
+
+## __Smart Coffee Maker__
+1. Press and hold the Power button for 10 seconds.
+
+    ![CoffeeMaker](./resources/photos/atomi_coffee_maker.jpg)
+    <br/><br/>
+
 2. The WiFi indicator on the LCD panel should start flashing.
+&rarr; <a href="https://manuals.plus/atomi-smart/atomi-smart-at1528-coffee-maker-user-guide#ixzz7mENuxAax">Read More</a>
+<br /><br />
 
->> <a href="https://manuals.plus/atomi-smart/atomi-smart-at1528-coffee-maker-user-guide#ixzz7mENuxAax">Read More</a>
-</pre>
-<br />
 
-## Google Nest Thermostat
-```
-1. Go to Settings Nest settings and then select Factory Reset. 
-2. Your thermostat will ask you to confirm your choice. 
+## __Google Nest Thermostat__
+1. Go to "Settings" or "Nest Settings" and then select "Reset" or "Factory Reset".
+2. Your thermostat will ask you to confirm your choice.
 3. Once you’ve confirmed, your thermostat will take a few moments to restart or reset.
-```
-<br />
+<br /><br />
 
-## Smart light
-```
+
+## __Smart light__
 1. Turn on and off the light 3 times
 2. Then turn on the lamp, after 4 seconds.
 3. Check lamp blinks rapidly.
-```
-<br />
+<br /><br />
 
-## Echo dot
-```
+
+## __Echo dot__
 1. Press and hold the Action button for 20 seconds.
+
+    ![Reset](./resources/photos/echo_dot.jpg)
+    <br/><br/>
 2. Wait for the light ring to turn off and on again.
-3. Your device enters setup mode. For setup instructions, go to Set Up Your Echo Dot.
-```
-<br />
+3. Your device enters setup mode.
+<br /><br />
