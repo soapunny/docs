@@ -1,7 +1,7 @@
 # __How to reset Alexa devices__
 <br />
 
-## __Fire TV cube__
+## __Fire TV Cube__
 1. Say "Alex, go to the settings." or Turn on the TV and go to Settings and then select the My Fire TV.
 
     ![Settings](./resources/photos/fireTvSettings.jpg)
@@ -38,14 +38,14 @@
 <br /><br />
 
 
-## __Smart light__
+## __Smart Light__
 1. Turn on and off the light 3 times
 2. Then turn on the lamp, after 4 seconds.
 3. Check lamp blinks rapidly.
 <br /><br />
 
 
-## __Echo dot__
+## __Echo Dot__
 1. Press and hold the Action button for 20 seconds.
 
     ![Reset](./resources/photos/echo_dot.jpg)

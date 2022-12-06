@@ -30,7 +30,7 @@
 ```
     //Examples
     Fire TV Cube - BW109
-    Echo dot - WG229
+    Echo Dot - WG229
     Coffee Maker - SW119
     Bedroom Light - PG2105
 ```
