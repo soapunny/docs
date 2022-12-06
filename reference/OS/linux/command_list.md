@@ -22,6 +22,8 @@
     - mv [FILENAME/FOLDERNAME] [FOLDERNAME]
 + Update filename
     - mv [OLD_FILENAME] [NEW_FILENAME]
++ Move files
+    - mv [file1] [file2] [file3] [NEW_DIR]
 
 
 ### Delete

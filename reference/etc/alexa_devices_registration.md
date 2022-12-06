@@ -44,7 +44,7 @@
 ```
 <br />
 
-## Smart light
+## Smart Light
 <pre>
 > Smart Life App Setup
     1. Download "Smart Life - Smart Living" app.

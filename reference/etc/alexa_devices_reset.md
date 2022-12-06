@@ -1,13 +1,66 @@
 # __How to reset Alexa devices__
 <br />
 
+<style>
+img {
+    width: 40vw;
+    height: 30vh;
+    padding-left: 10vw;
+    padding-bottom: 5vh; 
+    padding-top: 2vh;
+}
+</style>
+
 ## Fire TV cube
+
+1. Say "Alex, go to the settings." or Turn on the TV and go to Settings and then select the My Fire TV.
+
+![Settings](./resources/photos/fireTvSettings.jpg)
+
+2. Select "Reset to Factory Defaults" and confirm the following alert.
+
+![Reset](./resources/photos/fireTvFactoryReset.JPG)
+
+3. Wait until it finish rebooting.
+
+![Waiting](./resources/photos/fireTvFactoryReset_waiting.JPG)
+
+4. Push play/pause button on your firetv remote.
+
+![Restart](./resources/photos/fireTvFactoryReset_restart.jpg)
+
+5. Choose English.
+
+![Language](./resources/photos/fireTvFactoryReset_language.jpg)
+
+6. Select "Set Up with Remote"
+
+![SetUpWithRemote](./resources/photos/fireTvFactoryReset_setUpWithRemote.jpg)
+
+7. Connect to the Wifi
+
+![NetworkSetting](./resources/photos/fireTvFactoryReset_networkSetting.jpg)
+
+8. Pick one (your amazon account ex. soap.s@smartland.com)
+
+![SignIn](./resources/photos/fireTvFactoryReset_signIn.jpg)
+
+9. Go to amazon.com/code and sign with your account.
+
+![SignInOnline](./resources/photos/fireTvFactoryReset_signInOnline.jpg)
+
+10. Regist your device code on 9.
+
+![Code](./resources/photos/fireTvFactoryReset_code.jpg)
+
+11. Follow the direction and set the device name [DeviceName] - [BuildingName][UnitNumber]. 
 ```
-1. Go to Settings.
-2. Select My Fire TV.
-3. Select Reset to Factory Defaults.
+    //Examples
+    Fire TV Cube - BW109
+    Fire TV Cube - WG229
 ```
-<br />
+
+<br /><br />
 
 ## Smart Coffee Maker
 <pre>
@@ -41,3 +94,5 @@
 3. Your device enters setup mode. For setup instructions, go to Set Up Your Echo Dot.
 ```
 <br />
+
+<Link>
