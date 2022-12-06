@@ -1,7 +1,7 @@
 # __How to reset Alexa devices__
 <br />
 
-## Fire TV cube
+## __Fire TV cube__
 
 1. Say "Alex, go to the settings." or Turn on the TV and go to Settings and then select the My Fire TV.
 

@@ -1,11 +1,11 @@
 # __How to register Alexa devices on your Alex app__
+<br/>
 
 
 ## Fire TV cube
 ```
 1. Connect to TV using HDMI cable.
 2. Turn on the TV and follow the instructions.
-3. Change the name to "Fire TV Cube".
 ```
 <br />
 
