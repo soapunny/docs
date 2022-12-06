@@ -1,16 +1,6 @@
 # __How to reset Alexa devices__
 <br />
 
-<style>
-img {
-    width: 40vw;
-    height: 30vh;
-    padding-left: 10vw;
-    padding-bottom: 5vh; 
-    padding-top: 2vh;
-}
-</style>
-
 ## Fire TV cube
 
 1. Say "Alex, go to the settings." or Turn on the TV and go to Settings and then select the My Fire TV.
@@ -95,4 +85,12 @@ img {
 ```
 <br />
 
-<Link>
+<style>
+img {
+    width: 40vw;
+    height: 30vh;
+    padding-left: 10vw;
+    padding-bottom: 5vh; 
+    padding-top: 2vh;
+}
+</style>
