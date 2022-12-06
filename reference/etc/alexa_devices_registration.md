@@ -35,7 +35,7 @@
     ![SignInOnline](./resources/photos/fireTvFactoryReset_signInOnline.jpg)
     <br/><br/>
 
-8. Regist your device code on 9.
+8. Regist your device code displayed on the TV screen.
 
     ![Code](./resources/photos/fireTvFactoryReset_code.jpg)
     <br/><br/>
@@ -45,23 +45,66 @@
 
 
 ## Smart Coffee Maker
-<pre>
-> Atomi Smart App Setup
++ Atomi Smart App Setup
     1. Download "Atomi Smart" app.
-    2. Click +, and add the first Smart Coffee Maker on the list.
-    3. Set the network.
-    4. Check if WIFI icon on the coffee maker is blinking. If it doens't blink, <a href='https://github.com/soapunny/docs/blob/master/reference/etc/alexa_devices_reset.md'>Check here</a>
-    5. Follow the instructions on the app and finish connection.
 
-> Alexa App Setup
-    1. Open Amazon Alexa App, select more menu on the bottom and click "Skill & Games"
-    2. Click search icon on the right-top and Search "Atomi Smart"
-    3. Link the app to Alexa App.
-    4. Once it's done, go to the Devices menu and search Atomi Smart Coffee Maker
-    5. Push the "Discover Devices" button.
-    6. Change the name to "Coffee Maker".
-</pre>
-<br />
+        ![Code](./resources/photos/app_store-atomi_smart.jpg)
+        <br/><br/>
+
+    2. Click +, then select add device.
+
+        ![Code](./resources/photos/atomi_smart-home.jpg)
+        <br/><br/>
+
+    3. Select first "Smart Coffee Maker".
+
+        ![Code](./resources/photos/atomi_smart-add_device.jpg)
+        <br/><br/>
+
+    4. Reset the device([Reset](./alexa_devices_reset.md)) and Click "Continue".
+
+        ![Code](./resources/photos/atomi_smart-connect_device.jpg)
+        <br/><br/>
+
+    5. Click "Go to Connection".
+
+        ![Code](./resources/photos/atomi_smart-go_to_connect.jpg)
+        <br/><br/>
+
+    6. Connect to atomi-smart-xxxx on your wifi settings.
+
+        ![Code](./resources/photos/settings-wifi_settings.jpg)
+        <br/><br/>
+        
+    7. Click "Done"
+
+        ![Code](./resources/photos/atomi_smart-complete.jpg)
+        <br/><br/>
+
++ Alexa App Setup
+    1. Open Amazon Alexa App, go to "More" on the bottom and click "Skills & Games".
+
+        ![Code](./resources/photos/alexa_app-more.jpg)
+        <br/><br/>
+
+    2. Click search icon on the right-top.
+
+        ![Code](./resources/photos/alexa_app-more-skills_and_games.jpg)
+        <br/><br/>
+
+    3. Search "Atomi Smart".
+
+        ![Code](./resources/photos/alexa_app-more-skills_and_games-search.jpg)
+        <br/><br/>
+
+    4. Click the icon and link the "Atomi Smart".
+
+        ![Code](./resources/photos/alexa_app-more-skills_and_games-search_result.jpg)
+        <br/><br/>
+
+    5. Change the device name [here](./must_see-devices_naming.md).
+<br /><br/>
+
 
 ## Google Nest Thermostat
 ```
@@ -78,6 +121,7 @@
     6. Change the name to "Thermostat".
 ```
 <br />
+
 
 ## Smart Light
 <pre>
@@ -99,6 +143,7 @@
     6. Change the name to "Bedroom Light".
 </pre>
 <br />
+
 
 ## Echo dot
 ```
