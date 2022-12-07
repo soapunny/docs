@@ -3,6 +3,7 @@
 
 
 ## Fire TV cube
+***
 1. Connect to TV using HDMI cable.
 
 2. Push play/pause button on your firetv remote.
@@ -45,6 +46,7 @@
 
 
 ## Smart Coffee Maker
+***
 + Atomi Smart App Setup
     1. Download "Atomi Smart" app.
 
@@ -94,7 +96,7 @@
 
     3. Search "Atomi Smart".
 
-        ![Code](./resources/photos/alexa_app-more-skills_and_games-search.jpg)
+        ![Code](./resources/photos/alexa_app-more-skills_and_games-search_atomi.jpg)
         <br/><br/>
 
     4. Click the icon and link the "Atomi Smart".
@@ -107,49 +109,101 @@
 
 
 ## Google Nest Thermostat
-```
-> Google 
+***
++ Google Nest
     1. Download "Nest" app.
     2. Register your thermostat.
 
-> Alexa App Setup
-    1. Open Amazon Alexa App, select more menu on the bottom and click "Skill & Games"
++ Alexa App Setup
+    1. Open Amazon Alexa App, go to "More" on the bottom and click "Skills & Games".
+
+        ![Code](./resources/photos/alexa_app-more.jpg)
+        <br/><br/>
     2. Click search icon on the right-top and Search "Google Nest"
     3. Link the app to Alexa App.
     4. Once it's done, go to the Devices menu and search "Google Nest Thermostat"
     5. Push the "Discover Devices" button.
     6. Change the name to "Thermostat".
-```
-<br />
+<br /><br />
 
 
 ## Smart Light
-<pre>
-> Smart Life App Setup
+***
++ Smart Life App Setup
     1. Download "Smart Life - Smart Living" app.
-    2. Sign up for the "Smart Life" app.
-    3. Open the "Smart Life" app and click "+" icon to add new device.
-    4. Select "Lighting"
-    5. Power on the lamp, then confirm the blinks. 
-    if it doens't blink, <a href='https://github.com/soapunny/docs/blob/master/reference/etc/alexa_devices_reset.md'>Check here</a>
-    6. Set your WIFI network and follow the app's guide.
 
-> Alexa App Setup
-    1. Open Amazon Alexa App, select more menu on the bottom and click "Skill & Games"
+        ![Code](./resources/photos/app_store-Smart_Life.jpg)
+        <br/><br/>
+
+    2. Sign up for the "Smart Life" app.
+        <br/><br/>
+
+    3. Open the "Smart Life" app and click "+" icon to add new device.
+
+        ![Code](./resources/photos/smart_life-add_device.jpg)
+        <br/><br/>
+
+    4. Select "Ceiling Light(BLE+Wi-Fi)"
+
+        ![Code](./resources/photos/smart_life-ceiling_light.jpg)
+        <br/><br/>
+
+    5. Power on the lamp, then confirm the blinks. If it doens't blink, [click here](./alexa_devices_reset.md)
+
+        ![Code](./resources/photos/smart_life-ceiling_light-check_blinking.jpg)
+        <br/><br/>
+
+    6. Connect your phone to the WIFI hot spot starts with "SmartLife-" or "SL-" and follow the app's guide.
+
+        ![Code](./resources/photos/smart_life-ceiling_light-connect_wifi.jpg)
+        <br/><br/>
+
++ Alexa App Setup
+    1. Open Amazon Alexa App, go to "More" on the bottom and click "Skills & Games".
+
+        ![Code](./resources/photos/alexa_app-more.jpg)
+        <br/><br/>
+
     2. Click search icon on the right-top and Search "Smart Life"
-    3. Link the app to Alexa App.
-    4. Once it's done, go to the Devices menu and search Smart Life light
-    5. Push the "Discover Devices" button.
-    6. Change the name to "Bedroom Light".
-</pre>
-<br />
+
+        ![Code](./resources/photos/alexa_app-more-skills_and_games-search_smart.jpg)
+        <br/><br/>
+    
+    3. Launch the app to Alexa App.
+
+        ![Code](./resources/photos/alexa_app-more-skills_and_games-smart_life.jpg)
+        <br/><br/>
+
+    4. Change the device name [here](./must_see-devices_naming.md).
+<br /><br />
 
 
 ## Echo dot
-```
-1. Open Amazon Alexa App, in the Devices menu on the bottom, click "Add devices".
-2. Select Amazon Echo - Echo, Echo Dot, Echo Plus and more ...
-3. Follow the instructions.
-4. Change the name to "Echo dot".
-```
-<br />
+***
+1. Open Amazon Alexa App, in the "Devices" menu on the bottom, click "+" then select "Add Device".
+
+    ![Code](./resources/photos/alexa_app-Devices-add_device.jpg)
+    <br/><br/>
+
+2. Select Amazon Echo
+
+    ![Code](./resources/photos/alexa_app-Devices-add_device-setup.jpg)
+    <br/><br/>
+
+3. Select "Echo, Echo Dot, Echo Plus and more"
+
+    ![Code](./resources/photos/alexa_app-Devices-add_device-setup-Amazon_Echo.jpg)
+    <br/><br/>
+
+4. Check your device is displaying an orange light. If it's not, [click here.](./alexa_devices_reset.md)
+
+    ![Code](./resources/photos/alexa_app-Devices-add_device-setup-Amazon_Echo-check_reset.jpg)
+    <br/><br/>
+
+5. Wait for the app searching device.
+
+    ![Code](./resources/photos/alexa_app-Devices-add_device-setup-Amazon_Echo-searching_device.jpg)
+    <br/><br/>
+
+6. Change the device name [here](./must_see-devices_naming.md).
+<br /><br />
