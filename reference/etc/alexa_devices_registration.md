@@ -108,25 +108,6 @@
 <br /><br/>
 
 
-## Google Nest Thermostat
-***
-+ Google Nest
-    1. Download "Nest" app.
-    2. Register your thermostat.
-
-+ Alexa App Setup
-    1. Open Amazon Alexa App, go to "More" on the bottom and click "Skills & Games".
-
-        ![Code](./resources/photos/alexa_app-more.jpg)
-        <br/><br/>
-    2. Click search icon on the right-top and Search "Google Nest"
-    3. Link the app to Alexa App.
-    4. Once it's done, go to the Devices menu and search "Google Nest Thermostat"
-    5. Push the "Discover Devices" button.
-    6. Change the name to "Thermostat".
-<br /><br />
-
-
 ## Smart Light
 ***
 + Smart Life App Setup
@@ -206,4 +187,23 @@
     <br/><br/>
 
 6. Change the device name [here](./must_see-devices_naming.md).
+<br /><br />
+
+
+## Google Nest Thermostat
+***
++ Google Nest
+    1. Download "Nest" app.
+    2. Register your thermostat.
+
++ Alexa App Setup
+    1. Open Amazon Alexa App, go to "More" on the bottom and click "Skills & Games".
+
+        ![Code](./resources/photos/alexa_app-more.jpg)
+        <br/><br/>
+    2. Click search icon on the right-top and Search "Google Nest"
+    3. Link the app to Alexa App.
+    4. Once it's done, go to the Devices menu and search "Google Nest Thermostat"
+    5. Push the "Discover Devices" button.
+    6. Change the name to "Thermostat".
 <br /><br />
