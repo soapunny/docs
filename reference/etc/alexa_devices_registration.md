@@ -1,8 +1,17 @@
 # __How to register Alexa devices on your Alex app__
 <br/>
 
+## Index
+***
+1. [Fire TV Cube](#fire-tv-cube)
+2. [Smart Coffee Maker](#smart-coffee-maker)
+3. [Smart Light](#smart-light)
+4. [Echo Dot](#echo-dot)
+5. [Google Nest Thermostat](#google-nest-thermostat)
+<br/><br/>
 
-## Fire TV cube
+
+## Fire TV Cube
 ***
 1. Connect to TV using HDMI cable.
 

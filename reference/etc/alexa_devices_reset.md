@@ -1,6 +1,15 @@
 # __How to reset Alexa devices__
 <br />
 
+## Index
+***
+1. [Fire TV Cube](#fire-tv-cube)
+2. [Smart Coffee Maker](#smart-coffee-maker)
+3. [Smart Light](#smart-light)
+4. [Echo Dot](#echo-dot)
+5. [Google Nest Thermostat](#google-nest-thermostat)
+<br/><br/>
+
 ## __Fire TV Cube__
 1. Say "Alex, go to the settings." or Turn on the TV and go to Settings and then select the My Fire TV.
 
@@ -31,13 +40,6 @@
 <br /><br />
 
 
-## __Google Nest Thermostat__
-1. Go to "Settings" or "Nest Settings" and then select "Reset" or "Factory Reset".
-2. Your thermostat will ask you to confirm your choice.
-3. Once you’ve confirmed, your thermostat will take a few moments to restart or reset.
-<br /><br />
-
-
 ## __Smart Light__
 1. Turn on and off the light 3 times
 2. Then turn on the lamp, after 4 seconds.
@@ -52,4 +54,11 @@
     <br/><br/>
 2. Wait for the light ring to turn off and on again.
 3. Your device enters setup mode.
+<br /><br />
+
+
+## __Google Nest Thermostat__
+1. Go to "Settings" or "Nest Settings" and then select "Reset" or "Factory Reset".
+2. Your thermostat will ask you to confirm your choice.
+3. Once you’ve confirmed, your thermostat will take a few moments to restart or reset.
 <br /><br />
