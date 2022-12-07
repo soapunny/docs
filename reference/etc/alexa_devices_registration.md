@@ -2,7 +2,7 @@
 <br/>
 
 ## Index
-***
+
 1. [Fire TV Cube](#fire-tv-cube)
 2. [Smart Coffee Maker](#smart-coffee-maker)
 3. [Smart Light](#smart-light)
@@ -12,7 +12,7 @@
 
 
 ## Fire TV Cube
-***
+
 1. Connect to TV using HDMI cable.
 
 2. Push play/pause button on your firetv remote.
@@ -55,7 +55,7 @@
 
 
 ## Smart Coffee Maker
-***
+
 + Atomi Smart App Setup
     1. Download "Atomi Smart" app.
 
@@ -118,7 +118,7 @@
 
 
 ## Smart Light
-***
+
 + Smart Life App Setup
     1. Download "Smart Life - Smart Living" app.
 
@@ -169,7 +169,7 @@
 
 
 ## Echo dot
-***
+
 1. Open Amazon Alexa App, in the "Devices" menu on the bottom, click "+" then select "Add Device".
 
     ![Code](./resources/photos/alexa_app-Devices-add_device.jpg)
@@ -200,7 +200,7 @@
 
 
 ## Google Nest Thermostat
-***
+
 + Google Nest
     1. Download "Nest" app.
     2. Register your thermostat.
