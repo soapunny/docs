@@ -2,7 +2,7 @@
 <br />
 
 ## Index
-***
+
 1. [Fire TV Cube](#fire-tv-cube)
 2. [Smart Coffee Maker](#smart-coffee-maker)
 3. [Smart Light](#smart-light)
@@ -41,9 +41,12 @@
 
 
 ## __Smart Light__
-1. Turn on and off the light 3 times
+1. Turn on and off 3 times.
 2. Then turn on the lamp, after 4 seconds.
 3. Check lamp blinks rapidly.
+4. Then turn it off, on, off, on and off.
+5. Then turn on the lamp, after 4 seconds.
+6. Check lamp blinks slower.
 <br /><br />
 
 
