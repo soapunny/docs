@@ -1,4 +1,5 @@
 # __How to register Alexa devices on your Alex app__
+
 <br/>
 
 ## Index
@@ -9,7 +10,6 @@
 4. [Echo Dot](#echo-dot)
 5. [Google Nest Thermostat](#google-nest-thermostat)
 <br/><br/>
-
 
 ## Fire TV Cube
 
@@ -53,7 +53,6 @@
 9. Follow the direction and set the device name. <a href='https://github.com/soapunny/docs/blob/master/reference/etc/alexa_devices_reset.md'>&rarr; Set Device Name.</a>
 <br /><br />
 
-
 ## Smart Coffee Maker
 
 + Atomi Smart App Setup
@@ -62,32 +61,35 @@
         ![Code](./resources/photos/app_store-atomi_smart.jpg)
         <br/><br/>
 
-    2. Click +, then select add device.
+    2. __[Important]__ Signing up "Atomi Smart" app, choose __“United Kingdom”__ from the Drop-down menu.
+        <br/><br/>
+
+    3. Click +, then select add device.
 
         ![Code](./resources/photos/atomi_smart-home.jpg)
         <br/><br/>
 
-    3. Select first "Smart Coffee Maker".
+    4. Select first "Smart Coffee Maker".
 
         ![Code](./resources/photos/atomi_smart-add_device.jpg)
         <br/><br/>
 
-    4. Reset the device([Reset](./alexa_devices_reset.md)) and Click "Continue".
+    5. Reset the device([Reset](./alexa_devices_reset.md)) and Click "Continue".
 
         ![Code](./resources/photos/atomi_smart-connect_device.jpg)
         <br/><br/>
 
-    5. Click "Go to Connection".
+    6. Click "Go to Connection".
 
         ![Code](./resources/photos/atomi_smart-go_to_connect.jpg)
         <br/><br/>
 
-    6. Connect to atomi-smart-xxxx on your wifi settings.
+    7. Connect to atomi-smart-xxxx on your wifi settings.
 
         ![Code](./resources/photos/settings-wifi_settings.jpg)
         <br/><br/>
-        
-    7. Click "Done"
+
+    8. Click "Done"
 
         ![Code](./resources/photos/atomi_smart-complete.jpg)
         <br/><br/>
@@ -115,7 +117,6 @@
 
     5. Change the device name [here](./must_see-devices_naming.md).
 <br /><br/>
-
 
 ## Smart Light
 
@@ -158,7 +159,7 @@
 
         ![Code](./resources/photos/alexa_app-more-skills_and_games-search_smart.jpg)
         <br/><br/>
-    
+
     3. Launch the app to Alexa App.
 
         ![Code](./resources/photos/alexa_app-more-skills_and_games-smart_life.jpg)
@@ -166,7 +167,6 @@
 
     4. Change the device name [here](./must_see-devices_naming.md).
 <br /><br />
-
 
 ## Echo dot
 
@@ -197,7 +197,6 @@
 
 6. Change the device name [here](./must_see-devices_naming.md).
 <br /><br />
-
 
 ## Google Nest Thermostat
 

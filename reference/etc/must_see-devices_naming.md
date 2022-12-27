@@ -29,10 +29,11 @@
 [DeviceName] - [BuildingName][UnitNumber].
 ```
     //Examples
-    Fire TV Cube - BW109
-    Echo Dot - WG229
-    Coffee Maker - SW119
-    Thermostat - SW117
-    Bedroom Light - PG2105
+    BW109 - Fire TV Cube
+    WG229 - Echo Dot
+    SW119 - Coffee Maker 
+    SW117 - Thermostat
+    PG2105 - Bedroom Light
+    PG2105 - Kitchen Light
 ```
 <br/>
