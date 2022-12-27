@@ -26,7 +26,7 @@
 
 
 ## Naming Rule.
-[DeviceName] - [BuildingName][UnitNumber].
+[BuildingName][UnitNumber] - [DeviceName].
 ```
     //Examples
     BW109 - Fire TV Cube
