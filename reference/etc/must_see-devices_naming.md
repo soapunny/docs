@@ -26,14 +26,15 @@
 
 
 ## Naming Rule.
-[BuildingName][UnitNumber] - [DeviceName].
+[DeviceName]
 ```
     //Examples
-    BW109 - Fire TV Cube
-    WG229 - Echo Dot
-    SW119 - Coffee Maker 
-    SW117 - Thermostat
-    PG2105 - Bedroom Light
-    PG2105 - Kitchen Light
+    Fire TV Cube
+    Echo Dot
+    Coffee Maker 
+    Thermostat
+    Bedroom Light
+    Kitchen Light
+    Smart Cam
 ```
 <br/>
