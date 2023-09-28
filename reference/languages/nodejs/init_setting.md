@@ -120,7 +120,9 @@
         ```
         ``` javascript
         //js
-        import * as dotenv from 'dotenv'
+        import dotenv from 'dotenv';
+        // Load environment variables from .env file
+        dotenv.config();
 
         const ID = process.env.ID;
         const PASSWORD = process.env.PASSWORD;
