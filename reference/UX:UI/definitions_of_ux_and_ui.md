@@ -117,7 +117,9 @@ UI is a part of UX (**UX ⊃ UI**).
 
 - The flow is great, but the text is too small and contrast is poor → tiring to use, so the experience becomes bad.
 
-# UX / UI 쉽게 이해하기 (중학생 버전)
+## <br/><br/>
+
+# UX / UI 쉽게 이해하기
 
 ## 1) UX랑 UI 한 문장으로
 
